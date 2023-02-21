@@ -1,0 +1,20 @@
+.method {
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 700;
+  height: 22px;
+  padding: 2px 10px;
+
+  &.get {
+    background: $color-sapphire-blue-light-3;
+    color: $color-sapphire-blue;
+  }
+  &.post {
+    background: $color-jade-green-light-3;
+    color: $color-jade-green;
+  }
+  &.put {
+    background: $color-golden-yellow-light-2;
+    color: $color-golden-yellow-dark-1;
+  }
+}

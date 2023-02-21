@@ -51,7 +51,7 @@ $lang-select-pressed-bg: #292d3e !default; // color of language tab bg when mous
   background-color: $lang-select-bg;
   font-weight: bold;
   overflow-x: auto;
-  margin: -16px 0 -1px -16px;
+  margin: -12px 0 -1px -4px;
   width: 100%;
 
   a {
@@ -78,6 +78,7 @@ $lang-select-pressed-bg: #292d3e !default; // color of language tab bg when mous
     border-radius: 0;
     display: block;
     padding: 20px 4px 4px;
+    overflow: auto;
   }
 
   &:after {

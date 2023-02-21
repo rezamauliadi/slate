@@ -1,0 +1,16 @@
+.link-button {
+  background-color: transparent;
+  border: 1px solid $color-flip-orange;
+  border-radius: 8px;
+  color: $color-flip-orange;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $color-flip-orange;
+    color: $color-white;
+  }
+}

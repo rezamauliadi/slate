@@ -13,6 +13,10 @@ table {
     box-sizing: border-box;
 
     @extend %left-col;
+
+    code {
+      line-height: 1.85;
+    }
   }
 
   border-radius: 8px;
@@ -62,6 +66,14 @@ table {
 
   tbody tr:nth-child(2n) {
     background-color: $table-stripe-color;
+  }
+
+  em {
+    font-size: 13px;
+  }
+
+  p {
+    margin-bottom: 4px;
   }
 }
 

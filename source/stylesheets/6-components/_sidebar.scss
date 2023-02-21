@@ -131,7 +131,7 @@
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $color-border;
+    border-top: 1px solid $color-border;
 
     li,
     a {
@@ -140,12 +140,15 @@
     }
 
     a:hover {
-      text-decoration: underline;
+      color: $color-flip-orange;
+      text-decoration: none;
     }
 
     li {
       font-size: 0.8em;
       line-height: 1.7;
+      padding-top: 4px;
+      padding-bottom: 4px;
       text-decoration: none;
     }
   }

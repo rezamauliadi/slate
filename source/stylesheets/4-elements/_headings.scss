@@ -31,7 +31,7 @@ $h1-margin-bottom: 20px !default;
     margin-right: 16px;
     margin-left: 16px;
 
-    padding-top: 24px;
+    padding-top: 36px;
     padding-bottom: 12px;
     padding-left: 12px;
   }
@@ -47,7 +47,7 @@ $h1-margin-bottom: 20px !default;
     border-top: 1px solid $color-border;
     font-size: 19px;
 
-    margin-top: 4em;
+    margin-top: 3em;
     margin-bottom: 0;
     margin-right: 16px;
     margin-left: 16px;
@@ -65,11 +65,17 @@ $h1-margin-bottom: 20px !default;
     border-top: none;
   }
 
+  h2 + h3,
+  h2 + div + h3 {
+    margin-top: 0;
+  }
+
   h3,
   h4,
   h5,
   h6 {
     @extend %header-font;
+    clear: both;
     font-size: 15px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;

@@ -16,6 +16,7 @@
 @import "4-elements/code";
 @import "4-elements/headings";
 @import "4-elements/hr";
+@import "4-elements/scrollbar";
 @import "4-elements/table";
 
 @import "5-objects/content";
@@ -27,9 +28,12 @@
 @import "6-components/copy";
 @import "6-components/dark-box";
 @import "6-components/lang-selector";
+@import "6-components/link-button";
+@import "6-components/method";
 @import "6-components/search";
 @import "6-components/sidebar";
 @import "6-components/topbar";
+@import "6-components/validation-table";
 
 // @import 'rtl'; // uncomment to switch to RTL format
 
