@@ -1,4 +1,5 @@
 //= require ./lib/_energize
+//= require ./app/_bank-search
 //= require ./app/_copy
 //= require ./app/_toc
 //= require ./app/_lang
@@ -27,6 +28,8 @@ $(function () {
     adjustLanguageSelectorWidth();
   });
   adjustLanguageSelectorWidth();
+
+  buildDataTable();
 });
 
 window.onpopstate = function () {

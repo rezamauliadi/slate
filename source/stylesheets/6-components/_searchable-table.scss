@@ -1,0 +1,45 @@
+.searchable-table {
+  &__table thead {
+    tr:nth-child(2n) th {
+      font-weight: 400;
+      padding: 4px 12px;
+    }
+  }
+
+  &__line-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__search {
+    position: relative;
+    width: 50%;
+
+    &::before {
+      @extend %icon-search;
+      color: #aaabad;
+      font-size: 14px;
+      position: absolute;
+      top: 8px;
+      left: 22px;
+    }
+  }
+
+  &__input {
+    background-clip: padding-box;
+    border: 1px solid $color-border;
+    border-radius: 9px;
+    box-sizing: border-box;
+    color: $color-secondary;
+    font-family: "Proxima Nova";
+    height: 32px;
+    margin: 0 12px;
+    padding: 6px 12px 6px 30px;
+    width: 100%;
+
+    &::placeholder {
+      color: $color-disabled;
+      font-family: "Proxima Nova";
+    }
+  }
+}
