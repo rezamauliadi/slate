@@ -188,25 +188,26 @@ under the License.
   }
 
   function prependLangSelector(langCodes, langNames) {
-    const container = document.createElement("div");
-    container.classList.add("lang-selector-tabs");
-
     for (let i = 0; i < langCodes.length; i++) {
-      const langElement = document.createElement("a");
-      langElement.append(langNames[i]);
-      langElement.setAttribute("href", "#");
-      langElement.setAttribute("data-language-name", langCodes[i]);
-      container.append(langElement);
-    }
+      $("pre.highlight.tab-" + langCodes[i]).prepend(function () {
+        const container = document.createElement("div");
+        container.classList.add("lang-selector-tabs");
 
-    for (let i = 0; i < langCodes.length; i++) {
-      $("pre.highlight.tab-" + langCodes[i]).prepend(container);
+        for (let i = 0; i < langCodes.length; i++) {
+          const langElement = document.createElement("a");
+          langElement.append(langNames[i]);
+          langElement.setAttribute("href", "#");
+          langElement.setAttribute("data-language-name", langCodes[i]);
+          container.append(langElement);
+        }
+
+        return container;
+      });
     }
   }
 
   function bindClickLanguageTabs() {
     $(".lang-selector-tabs a").on("click", function (e) {
-      console.log("accscscsce");
       var language = $(this).data("language-name");
       pushURL(language);
       e.preventDefault();

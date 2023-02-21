@@ -19,7 +19,6 @@
 
   function buildContent(data) {
     const list = [];
-    console.log("tot", data);
     data.forEach((item) => {
       list.push(`
         <tr>

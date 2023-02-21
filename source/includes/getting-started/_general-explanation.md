@@ -57,6 +57,8 @@ Content-Type: application/json
 
 This response will be sent if the value of Authorization heder or the secret key is invalid.
 
+<div style="height: 50px;"></div>
+
 ### Not Found Error Response
 
 ```json
