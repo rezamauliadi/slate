@@ -1,0 +1,15 @@
+%default-font {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+%header-font {
+  @extend %default-font;
+  font-weight: bold;
+}
+
+%code-font {
+  font-family: $font-family-code;
+  font-size: $font-size-code;
+  line-height: 1.5;
+}

@@ -1,0 +1,23 @@
+a {
+  color: $color-flip-orange;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none !important;
+
+  &:hover {
+    color: $color-flip-orange-dark-1;
+  }
+
+  code & {
+    color: inherit;
+    cursor: text;
+    font-style: normal;
+    font-weight: inherit;
+    text-decoration: none !important;
+    pointer-events: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}

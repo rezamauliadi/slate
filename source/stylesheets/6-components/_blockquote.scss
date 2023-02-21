@@ -1,0 +1,34 @@
+.content {
+  blockquote {
+    color: $color-white;
+
+    margin: 0;
+    margin-right: 1%;
+    width: $code-block-width;
+
+    float: right;
+    clear: right;
+
+    box-sizing: border-box;
+
+    @extend %right-col;
+
+    & > p {
+      margin: 0;
+    }
+
+    a {
+      color: $color-flip-orange;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    & > p {
+      background-color: $color-white;
+      padding: $code-annotation-padding 2em;
+      color: $color-main;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+////////////////////////////////////////////////////////////////////////////////
+// CODE SAMPLE STYLES
+////////////////////////////////////////////////////////////////////////////////
+// This is all the stuff that appears in the right half of the page
+
+$code-bg: #292d3e !default;
+
+.content {
+  & > div.highlight {
+    clear: none;
+  }
+
+  pre {
+    color: $color-white;
+
+    margin: 0;
+    margin-right: 1%;
+    width: $code-block-width;
+
+    float: right;
+    clear: right;
+
+    box-sizing: border-box;
+
+    @extend %right-col;
+
+    & > p {
+      margin: 0;
+    }
+
+    a {
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+
+  pre {
+    @extend %code-font;
+    background-color: $code-bg;
+    border-radius: 8px;
+    padding: 2em $main-padding;
+  }
+}
+
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs {
+  color: #909090;
+}
+
+.highlight,
+.highlight .w {
+  background-color: $code-bg;
+}

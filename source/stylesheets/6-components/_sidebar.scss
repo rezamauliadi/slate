@@ -1,0 +1,222 @@
+#toc > ul > li > a > span {
+  float: right;
+  background-color: #2484ff;
+  border-radius: 40px;
+  width: 20px;
+}
+
+.toc-wrapper {
+  box-sizing: border-box;
+  background-color: $color-white;
+  border-right: 1px solid $color-border;
+  font-size: 13px;
+  font-weight: bold;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: left 0.3s ease-in-out;
+
+  padding: 0 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 30;
+  width: $nav-width;
+
+  //////////////////////////////////////////////////
+  // Language selector for mobile devices
+  //////////////////////////////////////////////////
+  .lang-selector {
+    display: none;
+
+    a {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+  }
+
+  //////////////////////////////////////////////////
+  // Logo at the top of the ToC
+  //////////////////////////////////////////////////
+  .logo {
+    display: block;
+    height: 34px;
+    max-width: 100%;
+    margin: 20px 16px;
+  }
+
+  /*****************************************/
+  /*****       Table of Content        *****/
+  /*****************************************/
+  // Normalize ul and li
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 28px;
+  }
+
+  li {
+    border-radius: 8px;
+    color: $color-main;
+    transition-property: background;
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+  }
+
+  .toc-link,
+  .toc-footer li {
+    align-items: center;
+    border-radius: 8px;
+    color: $color-main;
+    display: flex;
+    overflow-x: hidden;
+    padding: 0 $nav-padding 0 $nav-padding;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    transition-property: background;
+    transition-timing-function: linear;
+    transition-duration: 130ms;
+    white-space: nowrap;
+
+    &:hover {
+      color: $color-flip-orange;
+    }
+  }
+  .toc-list-h1 {
+    margin: 0 8px;
+  }
+  .toc-list-h2 {
+    display: none;
+    background-color: $color-white;
+    font-weight: 500;
+    margin: 4px 0 8px 12px;
+  }
+
+  .toc-link.active {
+    color: $color-flip-orange;
+  }
+  .toc-link.active-parent,
+  .toc-link.toc-h1.active {
+    background-color: $color-flip-orange-light-3;
+    color: $color-flip-orange;
+  }
+
+  .toc-h1 {
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 32px;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    width: 100%;
+
+    svg {
+      transform: rotate(90deg);
+      transition: all 200ms;
+    }
+
+    &.active svg,
+    &.active-parent svg {
+      transform: rotate(-90deg);
+    }
+  }
+  .toc-h2 {
+    padding-left: 12px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .toc-footer {
+    padding: 1em 0;
+    margin-top: 1em;
+    border-top: 1px dashed $color-border;
+
+    li,
+    a {
+      color: $color-main;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    li {
+      font-size: 0.8em;
+      line-height: 1.7;
+      text-decoration: none;
+    }
+  }
+}
+
+// button to show navigation on mobile devices
+#nav-button {
+  span {
+    display: block;
+    $side-pad: $main-padding / 2 - 8px;
+    padding: $side-pad $side-pad $side-pad;
+    background-color: rgba($color-white, 0.7);
+    transform-origin: 0 0;
+    transform: rotate(-90deg) translate(-100%, 0);
+    border-radius: 0 0 0 5px;
+  }
+  padding: 0 1.5em 5em 0; // increase touch size area
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.7;
+  line-height: 16px;
+  img {
+    height: 16px;
+    vertical-align: bottom;
+  }
+
+  transition: left 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+  &.open {
+    left: $nav-width;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .toc-wrapper {
+    left: -$nav-width;
+
+    &.open {
+      left: 0;
+    }
+  }
+
+  #nav-button {
+    display: block;
+  }
+
+  .toc-link {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+  }
+}
+
+@media (max-width: $phone-width) {
+  .toc-wrapper {
+    border-right: none;
+  }
+
+  .toc-wrapper .lang-selector {
+    display: block;
+  }
+
+  .page-wrapper .lang-selector {
+    display: none;
+  }
+}

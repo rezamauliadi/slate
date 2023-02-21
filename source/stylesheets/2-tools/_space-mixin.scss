@@ -1,0 +1,14 @@
+@media (max-width: $phone-width) {
+  %left-col {
+    margin-right: 0 !important;
+  }
+
+  %right-col {
+    width: auto !important;
+    float: none !important;
+  }
+
+  %right-col + %left-col {
+    margin-top: $main-padding !important;
+  }
+}

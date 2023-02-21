@@ -1,0 +1,99 @@
+aside {
+  .content > & {
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 20px;
+    margin-right: calc(#{$examples-width} + 12px);
+  }
+
+  border-radius: 8px;
+  border-left: 4px solid;
+  line-height: 1.5;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 16px;
+
+  &.notice {
+    background: $color-sapphire-blue-light-3;
+    border-color: $color-sapphire-blue-dark-1;
+    color: $color-sapphire-blue-dark-1;
+
+    a {
+      color: $color-sapphire-blue-dark-1;
+    }
+  }
+
+  &.warning {
+    background: $color-golden-yellow-light-3;
+    border-color: $color-golden-yellow-dark-1;
+    color: $color-golden-yellow-dark-1;
+
+    a {
+      color: $color-golden-yellow-dark-1;
+    }
+  }
+
+  &.success {
+    background: $color-jade-green-light-3;
+    border-color: $color-jade-green-dark-1;
+    color: $color-jade-green-dark-1;
+
+    a {
+      color: $color-jade-green-dark-1;
+    }
+  }
+
+  &.danger {
+    background: $color-crimson-red-light-3;
+    border-color: $color-crimson-red-dark-1;
+    color: $color-crimson-red-dark-1;
+
+    a {
+      color: $color-crimson-red-dark-1;
+    }
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  code {
+    color: inherit !important;
+  }
+}
+
+aside:before {
+  vertical-align: middle;
+  padding-right: 0.5em;
+  padding-top: 4px;
+  font-size: 14px;
+}
+
+aside.notice:before {
+  @extend %icon-info-sign;
+}
+
+aside.warning:before {
+  @extend %icon-exclamation-sign;
+}
+
+aside.danger:before {
+  @extend %icon-exclamation-sign;
+}
+
+aside.success:before {
+  @extend %icon-ok-sign;
+}
+
+@media (max-width: $phone-width) {
+  aside {
+    .content > &.notice,
+    .content > &.success,
+    .content > &.warning,
+    .content > &.danger {
+      margin-right: 20px;
+    }
+  }
+}

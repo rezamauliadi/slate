@@ -1,0 +1,69 @@
+.content {
+  // fixes webkit rendering bug for some: see #538
+  -webkit-transform: translateZ(0);
+  // to place content above the dark box
+  position: relative;
+  z-index: 30;
+
+  padding-top: $topbar-height;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  & > p,
+  & > ul,
+  & > ol,
+  & > dl {
+    margin-right: $examples-width;
+    padding: 0 $main-padding;
+    box-sizing: border-box;
+    display: block;
+
+    @extend %left-col;
+  }
+
+  & > ul,
+  & > ol {
+    padding-left: $main-padding + 15px;
+  }
+
+  // the div is the tocify hidden div for placeholding stuff
+  & > div {
+    clear: both;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 15px;
+  }
+
+  p,
+  li,
+  dt,
+  dd {
+    line-height: 1.6;
+    margin-top: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .content {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: $phone-width) {
+  .content {
+    padding-top: 0;
+  }
+}

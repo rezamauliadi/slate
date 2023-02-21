@@ -1,0 +1,88 @@
+$lang-select-bg: #292d3e !default;
+$lang-select-active-bg: #292d3e !default; // feel free to change this to blue or something
+$lang-select-pressed-bg: #292d3e !default; // color of language tab bg when mouse is pressed
+
+.page-wrapper {
+  .lang-selector {
+    position: fixed;
+    z-index: 50;
+    border-bottom: 5px solid $lang-select-active-bg;
+  }
+}
+
+.lang-selector {
+  display: flex;
+  background-color: $lang-select-bg;
+  width: 100%;
+  font-weight: bold;
+  overflow-x: auto;
+
+  a {
+    display: inline;
+    color: $color-white;
+    text-decoration: none;
+    padding: 0 10px;
+    line-height: 30px;
+    outline: 0;
+
+    &:active,
+    &:focus {
+      background-color: $lang-select-pressed-bg;
+      color: $color-jade-green;
+    }
+
+    &.active {
+      background-color: $lang-select-active-bg;
+      color: $color-jade-green;
+    }
+  }
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+.lang-selector-tabs {
+  @extend %default-font;
+
+  display: flex;
+  background-color: $lang-select-bg;
+  font-weight: bold;
+  overflow-x: auto;
+  margin: -16px 0 -1px -16px;
+  width: 100%;
+
+  a {
+    display: inline;
+    color: $color-white;
+    text-decoration: none;
+    padding: 10px 16px;
+    line-height: 1.5;
+    outline: 0;
+
+    &:active,
+    &:focus {
+      color: $color-jade-green;
+    }
+
+    &.active {
+      color: $color-jade-green;
+      border-bottom: 4px solid $color-jade-green;
+    }
+  }
+
+  .content pre > & + code {
+    border-top: 1px solid $color-sapphire-blue-light-1;
+    border-radius: 0;
+    display: block;
+    padding: 20px 4px 4px;
+  }
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}

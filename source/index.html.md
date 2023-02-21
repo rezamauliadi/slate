@@ -2,21 +2,23 @@
 title: API Reference
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
-  - shell
-  - ruby
-  - python
-  - javascript
+  - shell: Shell
+  - ruby: Ruby
+  - python: Python
+  - javascript: JS
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - introduction
   - errors
+  - test
 
 search: true
 
-code_clipboard: true
+code_clipboard: false
 
 meta:
   - name: description
@@ -54,9 +56,9 @@ curl "api_endpoint_here" \
 ```
 
 ```javascript
-const kittn = require('kittn');
+const kittn = require("kittn");
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize("meowmeowmeow");
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
@@ -68,7 +70,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+  <div>
+    You must replace <code>meowmeowmeow</code> with your personal API key.
+  <div>
 </aside>
 
 # Kittens
@@ -95,9 +99,9 @@ curl "http://example.com/api/kittens" \
 ```
 
 ```javascript
-const kittn = require('kittn');
+const kittn = require("kittn");
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize("meowmeowmeow");
 let kittens = api.kittens.get();
 ```
 
@@ -130,16 +134,22 @@ This endpoint retrieves all kittens.
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+| Parameter    | Default | Description                                                                      |
+| ------------ | ------- | -------------------------------------------------------------------------------- |
+| include_cats | false   | If set to true, the result will also include cats.                               |
+| available    | true    | If set to false, the result will include kittens that have already been adopted. |
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+  <div>
+    Remember — a happy kitten is an authenticated kitten!
+  </div>
 </aside>
 
 ## Get a Specific Kitten
+
+### HTTP Request
+
+`GET http://example.com/kittens/<ID>`
 
 ```ruby
 require 'kittn'
@@ -161,9 +171,9 @@ curl "http://example.com/api/kittens/2" \
 ```
 
 ```javascript
-const kittn = require('kittn');
+const kittn = require("kittn");
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize("meowmeowmeow");
 let max = api.kittens.get(2);
 ```
 
@@ -181,17 +191,17 @@ let max = api.kittens.get(2);
 
 This endpoint retrieves a specific kitten.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
+<aside class="warning">
+  <div>
+    Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.
+  </div>
+</aside>
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| ID        | The ID of the kitten to retrieve |
 
 ## Delete a Specific Kitten
 
@@ -216,9 +226,9 @@ curl "http://example.com/api/kittens/2" \
 ```
 
 ```javascript
-const kittn = require('kittn');
+const kittn = require("kittn");
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize("meowmeowmeow");
 let max = api.kittens.delete(2);
 ```
 
@@ -227,7 +237,7 @@ let max = api.kittens.delete(2);
 ```json
 {
   "id": 2,
-  "deleted" : ":("
+  "deleted": ":("
 }
 ```
 
@@ -239,7 +249,6 @@ This endpoint deletes a specific kitten.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+| Parameter | Description                    |
+| --------- | ------------------------------ |
+| ID        | The ID of the kitten to delete |
