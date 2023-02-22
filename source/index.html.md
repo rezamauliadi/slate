@@ -32,6 +32,14 @@ includes:
   - general/bank-account-inquiry
   - general/is-maintenance
 
+  - disbursement/title
+  - disbursement/disbursement-objects
+  - disbursement/create-disbursement
+  - disbursement/get-all-disbursement
+  - disbursement/get-disbursement-by-idem-key
+  - disbursement/get-disbursement-by-id
+  - disbursement/error-list
+
 search: true
 
 code_clipboard: false

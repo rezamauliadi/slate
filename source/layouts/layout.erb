@@ -85,6 +85,7 @@ under the License.
         </div>
         <ul class="search-results"></ul>
       <% end %>
+
       <ul id="toc" class="toc-list-h1">
         <% toc_data(page_content).each do |h1| %>
           <li>
@@ -117,6 +118,7 @@ under the License.
           </li>
         <% end %>
       </ul>
+
       <% if current_page.data.toc_footers %>
         <ul class="toc-footer">
           <% current_page.data.toc_footers.each do |footer| %>

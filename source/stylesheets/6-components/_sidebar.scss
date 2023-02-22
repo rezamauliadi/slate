@@ -130,6 +130,11 @@
     padding-left: 12px;
     font-size: 12px;
     font-weight: 400;
+
+    display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .toc-h3 {
     padding-left: 24px;

@@ -4,6 +4,12 @@
 
 You can use this endpoint to get the bank account holder name. For now, it still take us a few seconds to do the inquiry. The result will be returned as a callback if we haven't cached it yet. If it have been cached, you will get the result instantly. Be sure to set up your callback inquiry entry in your <a href="https://business.flip.id/settings/api-setting" target="_blank" rel="noopener noreferrer">Flip for Business Dashboard</a>.
 
+<aside class="notice">
+  <p>
+    Ensure to complete the whole process, get the final status for the inquiry, before proceeding to creating disbursement. <strong>Creating transaction before the inquiry process complete will impact the SLA.</strong>
+  </p>
+</aside>
+
 <table>
   <tbody>
     <tr>
@@ -154,7 +160,7 @@ curl https://bigflip.id/api/v2/disbursement/bank-account-inquiry \
   </tbody>
 </table>
 
-### Response
+### Response Body
 
 > **Cached response**
 
