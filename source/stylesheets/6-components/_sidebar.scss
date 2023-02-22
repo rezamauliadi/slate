@@ -91,17 +91,21 @@
   .toc-list-h2 {
     display: none;
     background-color: $color-white;
-    font-weight: 500;
+    font-weight: 400;
     margin: 4px 0 8px 12px;
   }
+  .toc-list-h3 {
+    background-color: $color-white;
+    font-weight: 400;
+  }
 
-  .toc-link.active {
+  .toc-link.active,
+  .toc-link.active-parent {
     color: $color-flip-orange;
   }
-  .toc-link.active-parent,
-  .toc-link.toc-h1.active {
+  .toc-h1.toc-link.active-parent,
+  .toc-h1.toc-link.active {
     background-color: $color-flip-orange-light-3;
-    color: $color-flip-orange;
   }
 
   .toc-h1 {
@@ -125,6 +129,11 @@
   .toc-h2 {
     padding-left: 12px;
     font-size: 12px;
+    font-weight: 400;
+  }
+  .toc-h3 {
+    padding-left: 24px;
+    font-size: 11px;
     font-weight: 400;
   }
 

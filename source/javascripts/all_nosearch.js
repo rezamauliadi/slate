@@ -10,7 +10,7 @@ function adjustLanguageSelectorWidth() {
 }
 
 $(function () {
-  loadToc($("#toc"), ".toc-link", ".toc-list-h2", 10);
+  loadToc($("#toc"), ".toc-link", ".toc-list-h2, .toc-list-h3", 10);
 
   prependLangSelector(
     $("body").data("languages"),
