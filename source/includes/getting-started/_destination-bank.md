@@ -4,7 +4,7 @@
 
 Find the list of bank codes below for the supported destination banks and e-Wallets. Currently, we support transfer to 100+ banks in Indonesia including Virtual Account/VA (BNI, BRI, CIMB, Mandiri, Danamon, Muamalat, and Permata) and e-Wallets.
 
-**Bank**
+### Bank
 
 <div id="destination-bank-data" style="display: none;" data-destination-bank='[
   ["harda", "Allo Bank/Bank Harda Internasional"],
@@ -149,9 +149,9 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   </tbody>
 </table>
 
-**e-Wallet**
+### E-Wallet
 
-| e-Wallet Code | e-Wallet Name |
+| E-Wallet Code | E-Wallet Name |
 | ------------- | ------------- |
 | `dana`        | Dana          |
 | `gopay`       | GoPay         |

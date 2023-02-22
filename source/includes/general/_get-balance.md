@@ -21,7 +21,7 @@ This endpoint will return your current account balance in Rupiah (IDR).
   </tbody>
 </table>
 
-### Request Headers
+<h3 id="get-balance-request-headers">Request Headers</h3>
 
 ```http
 GET /general/balance HTTP/1.1
@@ -40,13 +40,13 @@ Authorization: basic [your encoded flip for business secret key]
   </tbody>
 </table>
 
-### Request Parameters
+<h3 id="get-balance-request-parameters">Request Parameters</h3>
 
 ```php
 <?php
 
 $ch = curl_init();
-$secret_key = "wwwwwwwxxxxxxxaaaaaaabbbbbbbbbcccccdddd";
+$secret_key = "yoursecretkeyhere";
 
 curl_setopt($ch, CURLOPT_URL, "https://bigflip.id/api/v2/general/balance");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -66,12 +66,13 @@ var_dump($response);
 
 ```shell
 curl https://bigflip.id/api/v2/general/balance \
-    -u <secret_key>:
+  -u <secret_key>: \
+  -H "Content-Type=application/x-www-form-urlencoded"
 ```
 
 This API doesn’t have any request parameter available.
 
-### Response Body
+<h3 id="get-balance-response-body">Response Body</h3>
 
 ```json
 Status 200

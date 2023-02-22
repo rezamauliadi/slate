@@ -27,7 +27,7 @@ You can use this endpoint to get the bank account holder name. For now, it still
   </tbody>
 </table>
 
-### Request Headers
+<h3 id="bank-account-inquiry-request-headers">Request Headers</h3>
 
 ```http
 POST /disbursement/bank-account-inquiry HTTP/1.1
@@ -46,7 +46,7 @@ Authorization: Basic [your encoded flip for business secret key]
   </tbody>
 </table>
 
-### Request Parameters
+<h3 id="bank-account-inquiry-request-parameters">Request Parameters</h3>
 
 ```php
 <?php
@@ -82,11 +82,12 @@ var_dump($response);
 
 ```shell
 curl https://bigflip.id/api/v2/disbursement/bank-account-inquiry \
-    -X POST \
-    -u <secret_key>: \
-    -d account_number="5465327020" \
-    -d bank_code="bca" \
-    -d inquiry_key="aVncCDdKW9dciRvH9qSH"
+  -X POST \
+  -u <secret_key>:\
+  -H "Content-Type=application/x-www-form-urlencoded" \
+  -d "account_number=5465327020" \
+  -d "bank_code=bca" \
+  -d "inquiry_key=aVncCDdKW9dciRvH9qSH"
 ```
 
 <table>
@@ -160,7 +161,7 @@ curl https://bigflip.id/api/v2/disbursement/bank-account-inquiry \
   </tbody>
 </table>
 
-### Response Body
+<h3 id="bank-account-inquiry-response-body">Response Body</h3>
 
 > **Cached response**
 

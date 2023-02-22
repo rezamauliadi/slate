@@ -21,7 +21,7 @@ This endpoint will return list of bank codes, along with several other informati
   </tbody>
 </table>
 
-### Request Headers
+<h3 id="get-bank-info-request-headers">Request Headers</h3>
 
 ```http
 GET /general/banks HTTP/1.1
@@ -40,13 +40,13 @@ Authorization: basic [your encoded flip for business secret key]
   </tbody>
 </table>
 
-### Request Parameters
+<h3 id="get-bank-info-request-parameters">Request Parameters</h3>
 
 ```php
 <?php
 
 $ch = curl_init();
-$secret_key = "wwwwwwwxxxxxxxaaaaaaabbbbbbbbbcccccdddd";
+$secret_key = "yoursecretkeyhere";
 
 curl_setopt($ch, CURLOPT_URL, "https://bigflip.id/api/v2/general/banks");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -66,7 +66,8 @@ var_dump($response);
 
 ```shell
 curl https://bigflip.id/api/v2/general/banks \
-    -u <secret_key>:
+  -u <secret_key>: \
+  -H "Content-Type=application/x-www-form-urlencoded"
 ```
 
 You can also provide an optional bank code to filter the result to a specific bank only.
@@ -100,7 +101,7 @@ You can also provide an optional bank code to filter the result to a specific ba
 
 <div></div>
 
-### Response Body
+<h3 id="get-bank-info-response-body">Response Body</h3>
 
 <blockquote style="margin-top: -20px;">
   <p><strong>Without bank code filter:</strong></p>

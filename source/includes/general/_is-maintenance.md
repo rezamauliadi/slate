@@ -21,7 +21,7 @@ This endpoint will return information whether Flip currently is on maintenance o
   </tbody>
 </table>
 
-### Request Headers
+<h3 id="is-maintenance-request-headers">Request Headers</h3>
 
 ```http
 GET /general/maintenance HTTP/1.1
@@ -39,13 +39,13 @@ Content-Type: application/x-www-form-urlencoded
   </tbody>
 </table>
 
-### Request Parameters
+<h3 id="is-maintenance-request-parameters">Request Parameters</h3>
 
 ```php
 <?php
 
 $ch = curl_init();
-$secret_key = "wwwwwwwxxxxxxxaaaaaaabbbbbbbbbcccccdddd";
+$secret_key = "yoursecretkeyhere";
 
 curl_setopt($ch, CURLOPT_URL, "https://bigflip.id/api/v2/general/maintenance");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -65,12 +65,13 @@ var_dump($response);
 
 ```shell
 curl https://bigflip.id/api/v2/general/maintenance \
-    -u <secret_key>:
+  -u <secret_key>: \
+  -H "Content-Type=application/x-www-form-urlencoded"
 ```
 
 This API doesn’t have any request parameter available.
 
-### Response Body
+<h3 id="is-maintenance-response-body">Response Body</h3>
 
 ```json
 Status 200
