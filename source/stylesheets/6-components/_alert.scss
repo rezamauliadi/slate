@@ -20,6 +20,10 @@ aside {
 
     a {
       color: $color-sapphire-blue-dark-1;
+
+      &:hover {
+        color: $color-sapphire-blue-dark-2;
+      }
     }
   }
 
@@ -30,6 +34,10 @@ aside {
 
     a {
       color: $color-golden-yellow-dark-1;
+
+      &:hover {
+        color: $color-golden-yellow-dark-2;
+      }
     }
   }
 
@@ -40,6 +48,10 @@ aside {
 
     a {
       color: $color-jade-green-dark-1;
+
+      &:hover {
+        color: $color-jade-green-dark-2;
+      }
     }
   }
 
@@ -50,6 +62,10 @@ aside {
 
     a {
       color: $color-crimson-red-dark-1;
+
+      &:hover {
+        color: $color-crimson-red-dark-2;
+      }
     }
   }
 
