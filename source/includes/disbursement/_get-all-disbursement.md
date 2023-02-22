@@ -12,11 +12,11 @@ Use this endpoint to get the list of transaction you've made. By default, the re
     </tr>
     <tr>
       <td>Production URL</td>
-      <td><code>https://bigflip.id/api/v2/disbursement</code></td>
+      <td><code>https://bigflip.id/api/v3/disbursement</code></td>
     </tr>
     <tr>
       <td>Sandbox URL</td>
-      <td><code>https://bigflip.id/big_sandbox_api/v2/disbursement</code></td>
+      <td><code>https://bigflip.id/big_sandbox_api/v3/disbursement</code></td>
     </tr>
   </tbody>
 </table>

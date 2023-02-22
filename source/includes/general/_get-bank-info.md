@@ -88,7 +88,7 @@ You can also provide an optional bank code to filter the result to a specific ba
             <tr>
               <td>
                 <ul>
-                  <li>Accepted values are listed <a href="/docs/getting-started/destination-bank">here</a></li>
+                  <li>Accepted values are listed <a href="#destination-bank">here</a></li>
                 </ul>
               </td>
             </tr>

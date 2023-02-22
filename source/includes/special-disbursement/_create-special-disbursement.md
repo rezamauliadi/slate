@@ -1,3 +1,141 @@
+<div></div>
+
+<h2 id="create-special-disbursement-v3">Create Special Disbursement</h2>
+
+<aside class="warning">
+  <ul>
+    <li>
+      Idempotency key in a Disbursement request is a must. It will be used to prevent accidentally created the same disbursement more than once. Please see more detail on <a href="#idempotent-request">Idempotent Request</a> section.
+    </li>
+    <li>
+      <code>X-TIMESTAMP</code> in a Disbursement request is highly recommended by Flip. It will be used to validate your request in case of network error (timeout, delay, etc.). If a transaction is marked as timeout or stale, then it won't be processed by Flip. The duration until a transaction is marked stale is 60 seconds.
+    </li>
+    <li>
+      Flip highly recommend performing the account inquiry before every disbursement request. This is to ensure that the destination account has been validated and to prevent any transaction issues (e.g failed transaction due to account can't accept fund/inactive/closed, etc.) Please see more detail on <a href="#bank-account-inquiry">Bank Account Inquiry</a> section.
+    </li>
+  </ul>
+</aside>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Method</td>
+      <td><span class="method post">POST</span></td>
+    </tr>
+    <tr>
+      <td>Production URL</td>
+      <td><code>https://bigflip.id/api/v3/special-disbursement</code></td>
+    </tr>
+    <tr>
+      <td>Sandbox URL</td>
+      <td><code>https://bigflip.id/big_sandbox_api/v3/special-disbursement</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="create-special-disbursement-v3-request-headers">Request Headers</h3>
+
+```http
+POST /special-disbursement HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic [your encoded flip for business secret key]
+```
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>Content-Type</b> <em>required</em></p>
+        Request content type: <code>application/x-www-form-urlencoded</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>idempotency-key</b> <em>required</em></p>
+        Idempotency key. Please see more detail on <a href="#idempotent-request">Idempotent Request</a> section.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>X-TIMESTAMP</b> <em>optional</em></p>
+        Request timestamp. The format will follow the <b>ISO8601</b> format.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="create-special-disbursement-v3-request-parameters">Request Parameters</h3>
+
+```php
+<?php
+
+$ch = curl_init();
+$secret_key = "yoursecretkeyhere";
+
+curl_setopt($ch, CURLOPT_URL, "https://bigflip.id/api/v3/special-disbursement");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+curl_setopt($ch, CURLOPT_POST, TRUE);
+
+$payloads = [
+  "account_number" => "1122333301",
+  "bank_code" => "bni",
+  "amount" => 10000,
+  "remark" => "some remark",
+  "recipient_city" => 391,
+  "sender_country" => 100252,
+  "sender_place_of_birth" => 391,
+  "sender_date_of_birth" => "1992-01-01",
+  "sender_identity_type" => "nat_id",
+  "sender_name" => "John Doe",
+  "sender_address" => "Some Address Street 123",
+  "sender_identity_number" => "123456789",
+  "sender_job" => "entrepreneur",
+  "direction" => "DOMESTIC_SPECIAL_TRANSFER",
+  "beneficiary_email" => "test@mail.com,user@mail.com"
+];
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payloads));
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  "Content-Type: application/x-www-form-urlencoded",
+  "idempotency-key: idem-key-1",
+  "X-TIMESTAMP: 2022-01-01T15:02:15+0700"
+));
+
+curl_setopt($ch, CURLOPT_USERPWD, $secret_key.":");
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+var_dump($response);
+```
+
+```shell
+curl https://bigflip.id/api/v3/special-disbursement \
+  -X POST \
+  -u <secret_key>:\
+  -H "Content-Type=application/x-www-form-urlencoded" \
+  -H "idempotency-key=idem-key-1" \
+  -H "X-TIMESTAMP=2022-01-01T15:02:15+0700" \
+  -d "account_number=1122333301" \
+  -d "bank_code=bni" \
+  -d "amount=10000" \
+  -d "remark=some remark" \
+  -d "recipient_city=391" \
+  -d "sender_country=100252" \
+  -d "sender_place_of_birth=391" \
+  -d "sender_date_of_birth=1992-01-01" \
+  -d "sender_identity_type=nat_id" \
+  -d "sender_name=John Doe" \
+  -d "sender_address=Some Address Street 123" \
+  -d "sender_identity_number=123456789" \
+  -d "sender_job=entrepreneur" \
+  -d "direction=DOMESTIC_SPECIAL_TRANSFER" \
+  -d "beneficiary_email=test@mail.com,user@mail.com"
+```
+
 <table>
   <tbody>
     <tr>
@@ -38,7 +176,7 @@
                 <ul>
                   <li>
                     Accepted values are listed
-                    <a href="/docs/getting-started/destination-bank">here</a>
+                    <a href="#destination-bank">here</a>
                   </li>
                 </ul>
               </td>
@@ -121,7 +259,7 @@
                 <ul>
                   <li>
                     Accepted values are listed
-                    <a href="/docs/special-disbursement/city-list">here</a>
+                    <a href="#city-list">here</a>
                   </li>
                 </ul>
               </td>
@@ -146,7 +284,7 @@
                 <ul>
                   <li>
                     Accepted values are listed
-                    <a href="/docs/special-disbursement/country-list">here</a>
+                    <a href="#country-list">here</a>
                   </li>
                 </ul>
               </td>
@@ -175,7 +313,7 @@
                 <ul>
                   <li>
                     Accepted values are listed
-                    <a href="/docs/special-disbursement/city-country-list"
+                    <a href="#city-country-list"
                       >here</a
                     >
                   </li>
@@ -411,3 +549,46 @@
     </tr>
   </tbody>
 </table>
+
+<h3 id="create-special-disbursement-v3-response-body">Response Body</h3>
+
+```json
+Status 200
+Content-Type: application/json
+
+{
+  "id": 11,
+  "user_id": 20,
+  "amount": 10000,
+  "status": "DONE",
+  "reason": "",
+  "timestamp": "2017-08-24 21:21:23",
+  "bank_code": "bni",
+  "account_number": "1122333301",
+  "recipient_name": "John Smith",
+  "sender_bank": "bri",
+  "remark": "some remark",
+  "receipt": "someurl.jpg",
+  "time_served": "2017-08-25 09:11:35",
+  "bundle_id": 0,
+  "company_id": 7,
+  "recipient_city": 391,
+  "created_from": "API",
+  "direction": "FOREIGN_INBOUND_SPECIAL_TRANSFER",
+  "sender": {
+    "sender_name": "John Doe",
+    "place_of_birth": 391,
+    "date_of_birth": "1992-01-01",
+    "address": "Some Address Street 123",
+    "sender_identity_type": "nat_id",
+    "sender_identity_number": "123456789",
+    "sender_country": 100252,
+    "job": "entrepreneur"
+  },
+  "fee": 1000,
+  "beneficiary_email": "test@mail.com,user@mail.com",
+  "idempotency_key": "idem-key-2"
+}
+```
+
+This endpoint will return the [Disbursement Object](#the-disbursement-objects) as a response.

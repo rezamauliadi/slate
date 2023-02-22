@@ -40,6 +40,13 @@ includes:
   - disbursement/get-disbursement-by-id
   - disbursement/error-list
 
+  - special-disbursement/title
+  - special-disbursement/create-special-disbursement
+  - special-disbursement/city-list
+  - special-disbursement/country-list
+  - special-disbursement/city-country-list
+  - special-disbursement/error-list
+
 search: true
 
 code_clipboard: false

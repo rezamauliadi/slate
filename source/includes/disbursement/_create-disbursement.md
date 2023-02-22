@@ -26,11 +26,11 @@ Use this endpoint to create a common disbursement transaction. For company opera
     </tr>
     <tr>
       <td>Production URL</td>
-      <td><code>https://bigflip.id/api/v2/disbursement</code></td>
+      <td><code>https://bigflip.id/api/v3/disbursement</code></td>
     </tr>
     <tr>
       <td>Sandbox URL</td>
-      <td><code>https://bigflip.id/big_sandbox_api/v2/disbursement</code></td>
+      <td><code>https://bigflip.id/big_sandbox_api/v3/disbursement</code></td>
     </tr>
   </tbody>
 </table>
@@ -160,7 +160,7 @@ curl https://bigflip.id/api/v3/disbursement \
                 <ul>
                   <li>
                     Accepted values are listed
-                    <a href="/docs/getting-started/destination-bank">here</a>
+                    <a href="#destination-bank">here</a>
                   </li>
                 </ul>
               </td>
@@ -244,7 +244,7 @@ curl https://bigflip.id/api/v3/disbursement \
                 <ul>
                   <li>
                     Accepted values are listed
-                    <a href="/docs/special-disbursement/city-list">here</a>
+                    <a href="#city-list">here</a>
                   </li>
                 </ul>
               </td>

@@ -12,11 +12,11 @@ Use this endpoint to get one specific transaction specified by transaction's ID 
     </tr>
     <tr>
       <td>Production URL</td>
-      <td><code>https://bigflip.id/api/v2/get-disbursement</code></td>
+      <td><code>https://bigflip.id/api/v3/get-disbursement</code></td>
     </tr>
     <tr>
       <td>Sandbox URL</td>
-      <td><code>https://bigflip.id/big_sandbox_api/v2/get-disbursement</code></td>
+      <td><code>https://bigflip.id/big_sandbox_api/v3/get-disbursement</code></td>
     </tr>
   </tbody>
 </table>
