@@ -47,6 +47,11 @@ includes:
   - special-disbursement/city-country-list
   - special-disbursement/error-list
 
+  - agent-money-transfer/title
+  - agent-money-transfer/create-agent-disbursement
+  - agent-money-transfer/get-agent-disbursement
+  - agent-money-transfer/get-all-agent-disbursement
+
 search: true
 
 code_clipboard: false

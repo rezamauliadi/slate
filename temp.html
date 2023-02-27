@@ -2,8 +2,9 @@
   <tbody>
     <tr>
       <td>
-        <p><b>account_number</b> <em>required</em></p>
-        The account number of the recipient.
+        <p><b>agent_id</b> <em>optional</em></p>
+        The agent ID that wants to be retrieved. If not provided, will return
+        all agent disbursement for the company instead.
         <table class="validation-table">
           <thead>
             <tr>
@@ -24,33 +25,8 @@
     </tr>
     <tr>
       <td>
-        <p><b>bank_code</b> <em>required</em></p>
-        Bank code of the recipient bank.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    Accepted values are listed
-                    <a href="/docs/getting-started/destination-bank">here</a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>amount</b> <em>required</em></p>
-        The amount of money to be disbursed.
+        <p><b>pagination</b> <em>optional</em></p>
+        The pagination of the result. Default value is <code>20</code>.
         <table class="validation-table">
           <thead>
             <tr>
@@ -71,17 +47,8 @@
     </tr>
     <tr>
       <td>
-        <p><b>remark</b> <em>optional</em></p>
-        <p>
-          Remark to be included in the transfer made to the recipient. Usually
-          will appear as "berita transfer" or "remark" in the transfer receipt.
-          Max length for this attribute is <b>18</b> characters.
-        </p>
-        <p>
-          Only for disbursement with the bank code being <code>bri</code>, the
-          remark will be prepended with the beneficiary name. Example:
-          <code>tes remark</code> will be <code>john doe test remark</code>.
-        </p>
+        <p><b>page</b> <em>optional</em></p>
+        The page number of the result to be viewed.
         <table class="validation-table">
           <thead>
             <tr>
@@ -92,12 +59,7 @@
             <tr>
               <td>
                 <ul>
-                  <li>1-18 character</li>
-                  <li>Alphanumeric</li>
-                  <li>
-                    Spaces, <code>.</code>, <code>-</code>, <code>/</code>,
-                    <code>(</code>, and <code>)</code>
-                  </li>
+                  <li>Numeric</li>
                 </ul>
               </td>
             </tr>
@@ -107,111 +69,18 @@
     </tr>
     <tr>
       <td>
-        <p><b>recipient_city</b> <em>optional</em></p>
-        City code of the recipient city.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    Accepted values are listed
-                    <a href="/docs/special-disbursement/city-list">here</a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_country</b> <em>required</em></p>
-        Country code of the sender's residence.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    Accepted values are listed
-                    <a href="/docs/special-disbursement/country-list">here</a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_place_of_birth</b> <em>optional</em></p>
-        <p>City/country code of the sender's place of birth.</p>
-        <p>
-          Use city code if the sender's place of birth is in Indonesia, and
-          country code if outside Indonesia.
-        </p>
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    Accepted values are listed
-                    <a href="/docs/special-disbursement/city-country-list"
-                      >here</a
-                    >
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_date_of_birth</b> <em>optional</em></p>
-        Sender's birth date.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li><code>YYYY-MM-DD</code> format</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_identity_type</b> <em>optional</em></p>
-        Sender's ID type.
+        <p><b>sort</b> <em>optional</em></p>
+        Sort the result by the attribute.
+        <ul class="">
+          <li>
+            Use the attribute name (e.g <code>sort=id</code>) to sort in
+            <b>ascending</b> order.
+          </li>
+          <li>
+            Use dash+attribute name (e.g <code>sort=-id</code>) to sort in
+            <b>descending</b> order.
+          </li>
+        </ul>
         <table class="validation-table">
           <thead>
             <tr>
@@ -222,186 +91,12 @@
             <tr>
               <td>
                 <div class="validation-table__helper-text">
-                  Accepted values are as follows:
+                  Accepted values are as listed below:
                 </div>
                 <ul>
-                  <li>
-                    <code>nat_id</code>: National Id Card or KTP in Indonesia
-                  </li>
-                  <li><code>drv_lic</code>: Driving license</li>
-                  <li><code>passport</code>: Passport</li>
-                  <li><code>bank_acc</code>: Bank Account (DEFAULT)</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_name</b> <em>required</em></p>
-        The name of the user of the Money Transfer Company that act as a sender.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>Alphanumeric</li>
-                  <li>1-50 characters</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_address</b> <em>required</em></p>
-        Sender's address.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>Alphanumeric</li>
-                  <li>255 characters</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_identity_number</b> <em>optional</em></p>
-        Sender's ID number. Default value is from attribute
-        <code>account_number</code>.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="validation-table__helper-text">
-                  Maximum characters for each identity type:
-                </div>
-                <ul>
-                  <li>16 characters for KTP</li>
-                  <li>20 characters for Passport</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>sender_job</b> <em>required</em></p>
-        Sender's job.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="validation-table__helper-text">
-                  Accepted values are as follows:
-                </div>
-                <ul>
-                  <li><code>housewife</code></li>
-                  <li><code>entrepreneur</code></li>
-                  <li><code>private_employee</code></li>
-                  <li><code>government_employee</code></li>
-                  <li>
-                    <code>foundation_board</code> (People who work at foundation
-                    as an employee)
-                  </li>
-                  <li>
-                    <code>indonesian_migrant_worker</code> (Also known as TKI)
-                  </li>
-                  <li>
-                    <code>company</code> (If sender is a company, not
-                    individual)
-                  </li>
-                  <li><code>others</code></li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>direction</b> <em>required</em></p>
-        The direction of the transaction.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="validation-table__helper-text">
-                  Accepted values are as follows:
-                </div>
-                <ul>
-                  <li>
-                    <code>DOMESTIC_SPECIAL_TRANSFER</code><br />When the sender
-                    and the recipient are both residing in Indonesia
-                  </li>
-                  <li>
-                    <code>FOREIGN_INBOUND_SPECIAL_TRANSFER</code><br />When the
-                    sender are in a foreign country, but the recipient are in
-                    Indonesia
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>beneficiary_email</b> <em>optional</em></p>
-        List of the recipient emails.
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    Alphanumeric with email format (<code>xxx@xxx.xxx</code>)
-                  </li>
-                  <li>Separate each email with a comma (if any)</li>
+                  <li><code>id</code></li>
+                  <li><code>amount</code></li>
+                  <li><code>status</code></li>
                 </ul>
               </td>
             </tr>
