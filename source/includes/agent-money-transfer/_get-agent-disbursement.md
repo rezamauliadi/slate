@@ -24,7 +24,7 @@ An endpoint for obtaining the Agent's disbursement data by it's ID.
 <h3 id="get-agent-disbursement-by-id-request-headers">Request Headers</h3>
 
 ```http
-GET /agent-disbursements HTTP/1.1
+GET /agent-disbursements/:transaction-id HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic [your encoded flip for business secret key]
 ```
@@ -121,4 +121,4 @@ Content-Type: application/json
 }
 ```
 
-This endpoint will return the [Disbursement Object](#the-disbursement-objects) as a response. The sender attribute in the response will be filled with the Agent data.
+This endpoint will return the [Disbursement Object](#money-transfer-objects) as a response. The sender attribute in the response will be filled with the Agent data.

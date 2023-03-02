@@ -260,12 +260,39 @@ Content-Type: application/json
 }
 ```
 
-| Attribute       | Description                                                                          |
-| --------------- | ------------------------------------------------------------------------------------ |
-| `total_data`    | Total data returned in all page                                                      |
-| `data_per_page` | Total data returned in current page                                                  |
-| `total_page`    | Total/max page available                                                             |
-| `page`          | Current page                                                                         |
-| `data`          | The data consists all the returned [Disbursement Objects](#the-disbursement-objects) |
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>total_data</b> <em>integer</em></p>
+        Total data returned in all pages.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>data_per_page</b> <em>integer</em></p>
+        Total data returned in current page.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>total_page</b> <em>integer</em></p>
+        Total/max pages available.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>page</b> <em>integer</em></p>
+        Current page.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>data</b> <em>array</em></p>
+        Array of <b><a href="#money-transfer-objects">Disbursement Object</a></b>.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-This endpoint will return the [Disbursement Object](#the-disbursement-objects) as a response. The sender attribute in the response will be filled with the Agent data.
+This endpoint will return the [Disbursement Object](#money-transfer-objects) as a response. The sender attribute in the response will be filled with the Agent data.

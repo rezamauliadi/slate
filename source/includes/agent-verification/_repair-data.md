@@ -36,7 +36,7 @@ An endpoint for resubmit the Agent's identity data.
 <h3 id="repair-data-request-headers">Request Headers</h3>
 
 ```http
-PUT /users/[id]/repair HTTP/1.1
+PUT /users/:agent-id/repair HTTP/1.1
 Content-Type: multipart/form-data
 Authorization: Basic [your encoded flip for business secret key]
 Request-ID: bigflip-[generated uuid]
@@ -360,7 +360,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-country-list"
+                    <a href="#get-country-list"
                       >country list API</a
                     >.
                   </li>
@@ -387,7 +387,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-province-list"
+                    <a href="#get-province-list"
                       >province list API</a
                     >.
                   </li>
@@ -414,7 +414,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-city-list"
+                    <a href="#get-city-list"
                       >city list API</a
                     >.
                   </li>
@@ -441,7 +441,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-district-list"
+                    <a href="#get-district-list"
                       >district list API</a
                     >.
                   </li>
@@ -495,7 +495,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-country-list"
+                    <a href="#get-country-list"
                       >country list API</a
                     >.
                   </li>
@@ -522,7 +522,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-province-list"
+                    <a href="#get-province-list"
                       >province list API</a
                     >.
                   </li>
@@ -549,7 +549,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-city-list"
+                    <a href="#get-city-list"
                       >city list API</a
                     >.
                   </li>
@@ -576,7 +576,7 @@ curl https://api.flip.id/kyc/api/v1/users/1/repair \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-district-list"
+                    <a href="#get-district-list"
                       >district list API</a
                     >.
                   </li>
@@ -698,7 +698,7 @@ Content-Type: application/json
         <p><b>status</b> <em>integer</em></p>
         For this endpoint, the returned status will always be <code>20</code>.
         It means <code>PENDING</code> (See
-        <a href="/docs/agent-verification/product-details/agents-kyc-status"
+        <a href="#agents-kyc-status"
           >Agent's KYC Status</a
         >).
       </td>

@@ -36,7 +36,7 @@ This endpoint is used when you have finish creating and uploading the required d
 <h3 id="kyc-submission-request-headers">Request Headers</h3>
 
 ```http
-PUT /users/[id]/submit HTTP/1.1
+PUT /users/:agent-id/submit HTTP/1.1
 Content-Type: multipart/form-data
 Authorization: Basic [your encoded flip for business secret key]
 Request-ID: bigflip-[generated uuid]

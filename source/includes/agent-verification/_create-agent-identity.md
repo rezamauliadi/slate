@@ -259,7 +259,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-country-list"
+                    <a href="#get-country-list"
                       >country list API</a
                     >.
                   </li>
@@ -286,7 +286,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-province-list"
+                    <a href="#get-province-list"
                       >province list API</a
                     >.
                   </li>
@@ -313,7 +313,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-city-list"
+                    <a href="#get-city-list"
                       >city list API</a
                     >
                   </li>
@@ -340,7 +340,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-district-list"
+                    <a href="#get-district-list"
                       >district list API</a
                     >.
                   </li>
@@ -511,7 +511,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-country-list"
+                    <a href="#get-country-list"
                       >country list API</a
                     >.
                   </li>
@@ -538,7 +538,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-province-list"
+                    <a href="#get-province-list"
                       >province list API</a
                     >.
                   </li>
@@ -565,7 +565,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-city-list"
+                    <a href="#get-city-list"
                       >city list API</a
                     >
                   </li>
@@ -592,7 +592,7 @@ curl https://bigflip.id/api/v2/agents \
                 <ul>
                   <li>
                     Available values can be retrieved from the
-                    <a href="/docs/agent-verification/get-district-list"
+                    <a href="#get-district-list"
                       >district list API</a
                     >.
                   </li>

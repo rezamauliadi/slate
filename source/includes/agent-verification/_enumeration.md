@@ -2,7 +2,7 @@
 
 ## Enumeration
 
-### Agent's KYC Status
+<h3 id="agents-kyc-status">Agent's KYC Status</h3>
 
 | Name                              | Description                                                          |
 | --------------------------------- | -------------------------------------------------------------------- |
@@ -19,7 +19,7 @@
 | `APPROVED`                        | KYC Approved                                                         |
 | `REJECTED`                        | KYC Rejected                                                         |
 
-### Agent's KYC Rejection Reasons
+<h3 id="agents-kyc-rejection-reasons">Agent's KYC Rejection Reasons</h3>
 
 | Code | Meaning                                                                                     | Expectation                                                                         |
 | ---- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |

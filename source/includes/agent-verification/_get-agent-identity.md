@@ -24,7 +24,7 @@ An endpoint for obtaining the Agent identity data.
 <h3 id="get-agent-identity-request-headers">Request Headers</h3>
 
 ```http
-GET /agents HTTP/1.1
+GET /agents/:agent-id HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic [your encoded flip for business secret key]
 ```
@@ -178,7 +178,7 @@ Content-Type: application/json
               <td>
                 If there's a value, it will be an integer from
                 <a
-                  href="/docs/agent-verification/product-details/agents-kyc-rejection-reasons"
+                  href="#agents-kyc-rejection-reasons"
                   >Agent's KYC Rejection Reasons Code</a
                 >
               </td>
@@ -193,7 +193,7 @@ Content-Type: application/json
         Rejected reason for Agent's KYC. Full list of rejected reasons can be
         seen in the
         <a
-          href="/docs/agent-verification/product-details/agents-kyc-rejection-reasons"
+          href="#agents-kyc-rejection-reasons"
           >Agent's KYC Rejection Reasons Code</a
         >
         list.

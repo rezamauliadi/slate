@@ -36,7 +36,7 @@ An endpoint for reuploading the Agent's selfie with identity image.
 <h3 id="repair-identity-selfie-image-request-headers">Request Headers</h3>
 
 ```http
-PUT /users/[id]/repairSelfie HTTP/1.1
+PUT /users/:agent-id/repairSelfie HTTP/1.1
 Content-Type: multipart/form-data
 Authorization: Basic [your encoded flip for business secret key]
 Request-ID: bigflip-[generated uuid]

@@ -352,4 +352,4 @@ Content-Type: application/json
 }
 ```
 
-This endpoint will return the [Disbursement Object](#the-disbursement-objects) as a response. The sender attribute in the response will be filled with the Agent data.
+This endpoint will return the [Disbursement Object](#money-transfer-objects) as a response. The sender attribute in the response will be filled with the Agent data.

@@ -73,95 +73,115 @@ curl https://bigflip.id/api/v3/disbursement?pagination=10&page=1&sort=id&status=
 <table>
   <tbody>
     <tr>
-    <td>
-      <p><b>pagination</b> <em>optional</em></p>The pagination of the result. Default value is <code>20</code>.<table class="validation-table">
-      <thead>
-        <tr>
-          <th>Validation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li>Numeric</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </td>
-  </tr><tr>
-    <td>
-      <p><b>page</b> <em>optional</em></p>The page number of the result to be viewed.<table class="validation-table">
-      <thead>
-        <tr>
-          <th>Validation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li>Numeric</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </td>
-  </tr><tr>
-    <td>
-      <p><b>sort</b> <em>optional</em></p>Sort the result by the attribute.<ul class="">
-      <li>Use the attribute name (e.g <code>sort=id</code>) to sort in <b>ascending</b> order.</li>
-      <li>Use dash+attribute name (e.g <code>sort=-id</code>) to sort in <b>descending</b> order.</li>
-    </ul>
-    <table class="validation-table">
-      <thead>
-        <tr>
-          <th>Validation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li>Accepted values are as listed below</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </td>
-  </tr><tr>
-    <td>
-      <p><b>[attribute]</b> <em>optional</em></p>
-    <p>Filter the result by changing the <b><code>attribute</code></b> with the attribute to be filtered and
-      its value with the filter value. You can filter more than one attribute by appending another
-      attribute filter to the URL. The attributes that can be filtered are listed below.</p>Example:
-    <code>status=DONE</code>
-    <table class="validation-table">
-      <thead>
-        <tr>
-          <th>Validation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li>Accepted values are as listed below</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </td>
-  </tr>
+      <td>
+        <p><b>pagination</b> <em>optional</em></p>
+        The pagination of the result. Default value is <code>20</code>.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Numeric</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>page</b> <em>optional</em></p>
+        The page number of the result to be viewed.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Numeric</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>sort</b> <em>optional</em></p>
+        Sort the result by the attribute.
+        <ul>
+          <li>
+            Use the attribute name (e.g <code>sort=id</code>) to sort in
+            <b>ascending</b> order.
+          </li>
+          <li>
+            Use dash+attribute name (e.g <code>sort=-id</code>) to sort in
+            <b>descending</b> order.
+          </li>
+        </ul>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Accepted values are as listed below</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>[attribute]</b> <em>optional</em></p>
+        <p>
+          Filter the result by changing the <b><code>attribute</code></b> with
+          the attribute to be filtered and its value with the filter value. You
+          can filter more than one attribute by appending another attribute
+          filter to the URL. The attributes that can be filtered are listed
+          below.
+        </p>
+        Example:
+        <code>status=DONE</code>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Accepted values are as listed below</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
   </tbody>
 </table>
 
-#### Sort and Filter by Attributes
+**Sort and Filter by Attributes**
 
 You can also filter the result by changing **`attribute`** with the attribute to be filtered and **`value`** with the filter value. You can filter more than one attribute by appending another attribute filter to the url. Attribute that can be filtered are:
 
@@ -255,10 +275,37 @@ Content-Type: application/json
 }
 ```
 
-| Attribute       | Description                                                                          |
-| --------------- | ------------------------------------------------------------------------------------ |
-| `total_data`    | Total data returned in all page                                                      |
-| `data_per_page` | Total data returned in current page                                                  |
-| `total_page`    | Total/max page available                                                             |
-| `page`          | Current page                                                                         |
-| `data`          | The data consists all the returned [Disbursement Objects](#the-disbursement-objects) |
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>total_data</b> <em>integer</em></p>
+        Total data returned in all pages.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>data_per_page</b> <em>integer</em></p>
+        Total data returned in current page.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>total_page</b> <em>integer</em></p>
+        Total/max pages available.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>page</b> <em>integer</em></p>
+        Current page.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>data</b> <em>array</em></p>
+        Array of <b><a href="#money-transfer-objects">Disbursement Object</a></b>.
+      </td>
+    </tr>
+  </tbody>
+</table>

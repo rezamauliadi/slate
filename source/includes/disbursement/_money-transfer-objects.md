@@ -1,6 +1,6 @@
 <div></div>
 
-## The Disbursement Objects
+## Money Transfer Objects
 
 ### Disbursement Object
 

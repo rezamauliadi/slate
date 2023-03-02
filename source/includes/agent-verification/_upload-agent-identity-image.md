@@ -36,7 +36,7 @@ This is an endpoint for uploading the created Agent's identity image. The identi
 <h3 id="upload-agent-identity-image-request-headers">Request Headers</h3>
 
 ```http
-PUT /users/[id]/identities HTTP/1.1
+PUT /users/:agent-id/identities HTTP/1.1
 Content-Type: multipart/form-data
 Authorization: Basic [your encoded flip for business secret key]
 Request-ID: bigflip-[generated uuid]
