@@ -1,3 +1,22 @@
+<div></div>
+
+<h2 id="agent-verification-error-list">Error List</h2>
+
+This error list is related to the Agent's Verification services.
+
+> **Error format**
+
+```json
+{
+  "errors": [
+    {
+      "code": [error code],
+      "message": [error message]
+    }
+  ]
+}
+```
+
 <table>
   <thead>
     <tr>

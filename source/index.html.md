@@ -52,6 +52,23 @@ includes:
   - agent-money-transfer/get-agent-disbursement
   - agent-money-transfer/get-all-agent-disbursement
 
+  - agent-verification/title
+  - agent-verification/create-agent-identity
+  - agent-verification/update-agent-identity
+  - agent-verification/get-agent-identity
+  - agent-verification/upload-agent-identity-image
+  - agent-verification/upload-supporting-document
+  - agent-verification/kyc-submission
+  - agent-verification/repair-data
+  - agent-verification/repair-identity-image
+  - agent-verification/repair-identity-selfie-image
+  - agent-verification/get-country-list
+  - agent-verification/get-province-list
+  - agent-verification/get-city-list
+  - agent-verification/get-district-list
+  - agent-verification/enumeration
+  - agent-verification/error-list
+
 search: true
 
 code_clipboard: false
