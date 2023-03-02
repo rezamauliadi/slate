@@ -33,7 +33,7 @@ includes:
   - general/is-maintenance
 
   - disbursement/title
-  - disbursement/disbursement-objects
+  - disbursement/money-transfer-objects
   - disbursement/create-disbursement
   - disbursement/get-all-disbursement
   - disbursement/get-disbursement-by-idem-key
@@ -68,6 +68,17 @@ includes:
   - agent-verification/get-district-list
   - agent-verification/enumeration
   - agent-verification/error-list
+
+  - international-transfer/title
+  - international-transfer/international-transfer-objects
+  - international-transfer/get-exchange-rates
+  - international-transfer/get-form-data
+  - international-transfer/create-international-transfer
+  - international-transfer/get-international-transfer
+  - international-transfer/get-all-international-transfer
+  - international-transfer/supported-destination-countries
+  - international-transfer/cancelled-trx-reasons
+  - international-transfer/error-list
 
 search: true
 
