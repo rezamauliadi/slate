@@ -1,8 +1,14 @@
 <div></div>
 
-## Create International Transfer
+## Create International Transfer C2C/C2B
 
-An endpoint to create the international transfer transaction.
+An endpoint to create the international transfer C2C/C2C transaction.
+
+<aside class="notice">
+  <p>
+    Please visit this <a href="https://storage.googleapis.com/flip-prod-dbs-assets/templates/International-Transfer-API-Required-Fields.xlsx" target="_blank" rel="noopener noreferrer">link</a> to see required fields for each country.
+  </p>
+</aside>
 
 <aside class="warning">
   <ul>
@@ -32,7 +38,7 @@ An endpoint to create the international transfer transaction.
   </tbody>
 </table>
 
-<h3 id="create-international-transfer-request-headers">Request Headers</h3>
+<h3 id="create-international-transfer-c2c-c2b-request-headers">Request Headers</h3>
 
 ```http
 POST /international-disbursement HTTP/1.1
@@ -63,7 +69,7 @@ Authorization: Basic [your encoded flip for business secret key]
   </tbody>
 </table>
 
-<h3 id="create-international-transfer-request-parameters">Request Parameters</h3>
+<h3 id="create-international-transfer-c2c-c2b-request-parameters">Request Parameters</h3>
 
 ```php
 <?php
@@ -488,7 +494,7 @@ curl https://bigflip.id/api/v2/international-disbursement \
   </tbody>
 </table>
 
-<h3 id="create-international-transfer-response-body">Response Body</h3>
+<h3 id="create-international-transfer-c2c-c2b-response-body">Response Body</h3>
 
 ```json
 Status 200

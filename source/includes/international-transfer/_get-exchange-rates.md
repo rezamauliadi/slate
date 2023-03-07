@@ -119,6 +119,8 @@ curl https://bigflip.id/api/v2/international-disbursement/exchange-rates?transac
                 <ul>
                   <li>C2C</li>
                   <li>C2B</li>
+                  <li>B2C</li>
+                  <li>B2B</li>
                 </ul>
               </td>
             </tr>

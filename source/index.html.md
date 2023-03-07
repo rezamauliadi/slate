@@ -73,7 +73,8 @@ includes:
   - international-transfer/international-transfer-objects
   - international-transfer/get-exchange-rates
   - international-transfer/get-form-data
-  - international-transfer/create-international-transfer
+  - international-transfer/create-international-transfer-c2x
+  - international-transfer/create-international-transfer-b2x
   - international-transfer/get-international-transfer
   - international-transfer/get-all-international-transfer
   - international-transfer/supported-destination-countries

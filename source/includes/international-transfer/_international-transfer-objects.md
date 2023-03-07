@@ -177,6 +177,8 @@ This object is the one that will be returned by the Create International Transfe
         <ul>
           <li>C2C</li>
           <li>C2B</li>
+          <li>B2C</li>
+          <li>B2B</li>
         </ul>
       </td>
     </tr>
