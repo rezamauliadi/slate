@@ -190,11 +190,39 @@ Content-Type: application/json
       <td>
         <p><b>status</b> <em>string</em></p>
         The status of the disbursement process in related bank. Possible values are: <br>
-        <ul>
-          <li><code>OPERATIONAL</code><br>Banks are operational, disbursement will be processed as soon as possible</li>
-          <li><code>DISTURBED</code><br>Banks are slow or have another problem. Disbursement will still be processed, but in slower pace and might be delayed</li>
-          <li><code>HEAVILY_DISTURBED</code><br>Banks are having an error, offline, or another problem that result in a nearly unusable system. Disbursement to this bank can not be processed in a short time, and maybe won't be processed in the same day. You can ask for a refund if this happen.</li>
-        </ul>
+        <table class="desc-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>OPERATIONAL</code></td>
+              <td>
+                Banks are operational, disbursement will be processed as soon as
+                possible.
+              </td>
+            </tr>
+            <tr>
+              <td><code>DISTURBED</code></td>
+              <td>
+                Banks are slow or have another problem. Disbursement will still be
+                processed, but in slower pace and might be delayed.
+              </td>
+            </tr>
+            <tr>
+              <td><code>HEAVILY_DISTURBED</code></td>
+              <td>
+                Banks are having an error, offline, or another problem that result in a
+                nearly unusable system. Disbursement to this bank can not be processed
+                in a short time, and maybe won't be processed in the same day. You can
+                ask for a refund if this happen.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
   </tbody>

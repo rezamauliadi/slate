@@ -93,6 +93,15 @@ includes:
   - international-transfer/cancelled-trx-reasons
   - international-transfer/error-list
 
+  - callback/title
+  - callback/bank-inquiry-callback
+  - callback/disbursement-callback
+  - callback/special-disbursement-callback
+  - callback/accept-payment-callback
+  - callback/international-transfer-callback
+  - callback/agent-kyc-status-callback
+  - callback/bank-status-callback
+
 search: true
 
 code_clipboard: false
