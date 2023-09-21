@@ -45,53 +45,335 @@
 }
 ```
 
-| Attribute                | Description                                                                                                                                                                                                                                                                                                                                                   |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| link_id                  | Bill link ID.                                                                                                                                                                                                                                                                                                                                                 |
-| link_url                 | Bill link URL for the user.                                                                                                                                                                                                                                                                                                                                   |
-| title                    | Title of the bill.                                                                                                                                                                                                                                                                                                                                            |
-| type                     | Bill type: <ul><li>`SINGLE`: single use</li><li>`MULTIPLE`: multiple use</li></ul>                                                                                                                                                                                                                                                                            |
-| amount                   | Payment amount.                                                                                                                                                                                                                                                                                                                                               |
-| redirect_url             | Redirect URL after payment is success.                                                                                                                                                                                                                                                                                                                        |
-| expired_date             | Bill expiry date. The bill can't be used any more beyond the expiry date.                                                                                                                                                                                                                                                                                     |
-| created_from             | Bill created from method.                                                                                                                                                                                                                                                                                                                                     |
-| status                   | Bill activation status: <ul><li>`ACTIVE`</li><li>`INACTIVE`</li></ul>                                                                                                                                                                                                                                                                                         |
-| is_address_required      | A flag if user needs to input their address when creating payment. <ul><li>`0`: false</li><li>`1`: true</li></ul>                                                                                                                                                                                                                                             |
-| is_phone_number_required | A flag if user needs to input their phone number when creating payment. <ul><li>`0`: false</li><li>`1`: true</li></ul>                                                                                                                                                                                                                                        |
-| step                     | Which step the customers will be redirected to when opening the payment link. <ul><li>`1`: input-data (default)</li><li>`2`: payment-method</li><li>`3`: payment-confirmation</li></ul>                                                                                                                                                                       |
-| customer                 | **(Returned only if customer's merchant chooses step 2 or 3)** <br> Customer Data that is being saved. <br> See [Customer Object](#customer-object).                                                                                                                                                                                                          |
-| bill_payment             | **(Returned only if customer's merchant chooses step 3)** <br> Bill Payment data that has been created. <br> See [Bill Payment Object](#bill-payment-object).                                                                                                                                                                                                 |
-| payment_url              | **(Returned only if customer's merchant chooses step 3)** <br> URL of the confirmation link or instruction to do the payment action.<br><ul><li>URL confirmation link is for payment using bank transfer, VA payment method, and QRIS with internal url</li><li>URL instruction link is for payment using e-wallet payment method with external url</li></ul> |
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>link_id</b> <em>integer</em></p>
+        Bill link ID.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>link_url</b> <em>string</em></p>
+        Bill link URL for the user.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>title</b> <em>string</em></p>
+        Title of the bill.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>type</b> <em>string</em></p>
+        Bill type:
+        <ul>
+          <li><code>SINGLE</code>: single use</li>
+          <li><code>MULTIPLE</code>: multiple use</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>amount</b> <em>integer</em></p>
+        Payment amount.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>redirect_url</b> <em>string</em></p>
+        Redirect URL after payment is success.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>expired_date</b> <em>string</em></p>
+        Bill expiry date. The bill can't be used any more beyond the expiry
+        date.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>created_from</b> <em>string</em></p>
+        Bill created from method.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>status</b> <em>string</em></p>
+        Bill activation status:
+        <ul>
+          <li><code>ACTIVE</code></li>
+          <li><code>INACTIVE</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>is_address_required</b> <em>integer</em></p>
+        A flag if user needs to input their address when creating payment.
+        <ul>
+          <li><code>0</code>: false</li>
+          <li><code>1</code>: true</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>is_phone_number_required</b> <em>integer</em></p>
+        A flag if user needs to input their phone number when creating payment.
+        <ul>
+          <li><code>0</code>: false</li>
+          <li><code>1</code>: true</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>step</b> <em>integer</em></p>
+        Which step the customers will be redirected to when opening the payment
+        link.
+        <ul>
+          <li><code>1</code>: input-data (default)</li>
+          <li><code>2</code>: payment-method</li>
+          <li><code>3</code>: payment-confirmation</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>customer</b> <em>object</em></p>
+        <strong
+          >(Returned only if customer's merchant chooses step 2 or 3)</strong
+        >
+        <br />
+        Customer Data that is being saved. See <b>Customer Object</b> table.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>bill_payment</b> <em>object</em></p>
+        <strong>(Returned only if customer's merchant chooses step 3)</strong>
+        <br />
+        Bill Payment data that has been created. See
+        <b>Bill Payment Object</b> table.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>payment_url</b> <em>string</em></p>
+        <strong>(Returned only if customer's merchant chooses step 3)</strong
+        ><br />
+        URL of the confirmation link or instruction to do the payment action.<br />
+        <ul>
+          <li>
+            URL confirmation link is for payment using bank transfer, VA payment
+            method, and QRIS with internal url
+          </li>
+          <li>
+            URL instruction link is for payment using e-wallet payment method
+            with external url
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### Customer Object
 
-| Attribute | Description                   |
-| --------- | ----------------------------- |
-| name      | Name of the Customer.         |
-| email     | Email of the Customer.        |
-| phone     | Phone number of the Customer. |
-| address   | Address of the Customer.      |
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>name</b> <em>string</em></p>
+        Name of the Customer.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>email</b> <em>string</em></p>
+        Email of the Customer.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>address</b> <em>string</em></p>
+        Address of the Customer.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>phone</b> <em>string</em></p>
+        Address of the Customer.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### Bill Payment Object
 
-| Attribute             | Description                                                                                                                                                                                                                                                                                                                                                                                                   |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                    | ID of the transaction.                                                                                                                                                                                                                                                                                                                                                                                        |
-| amount                | Amount of the transaction. Please note that **in case of Bank Transfer payment option**, the **actual amount to be transferred by your customer** must be equal to the `amount` + `unique_code` returned in the response.                                                                                                                                                                                     |
-| unique_code           | Unique code of the transaction                                                                                                                                                                                                                                                                                                                                                                                |
-| status                | Status of the transaction <ul><li>`NOT_CONFIRMED`: If the transaction was just created.</li><li>`PENDING`: If the transaction has been confirmed by the user</li><li>`PROCESSED`: If the transaction is being processed by the system.</li><li>`CANCELED`: If the transaction is canceled.</li><li>`FAILED`: If the transaction is failed.</li><li>`DONE`: If the transaction is successfully done.</li></ul> |
-| sender_bank           | Bank that is used for the payment. <br> See [Bank Code Constants](#accept-payment-bank-code).                                                                                                                                                                                                                                                                                                                 |
-| sender_bank_type      | Type of the sender bank that is used for the payment. <ul><li>`bank_account`: if the type of the sender bank uses bank transfer.</li><li>`virtual_account`: if the type of the sender bank uses a virtual account.</li><li>`wallet_account`: if the type of the sender bank uses e-wallet.</li></ul>                                                                                                          |
-| receiver_bank_account | Account of the receiver of the payment. <br> See [Bank Account Object](#bank-account-object).                                                                                                                                                                                                                                                                                                                 |
-| user_address          | Address of the User.                                                                                                                                                                                                                                                                                                                                                                                          |
-| user_phone            | Phone number of the User.                                                                                                                                                                                                                                                                                                                                                                                     |
-| created_at            | Unix timestamps of the transaction when it is created.                                                                                                                                                                                                                                                                                                                                                        |
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>id</b> <em>string</em></p>
+        ID of the transaction.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>amount</b> <em>integer</em></p>
+        Amount of the transaction. Please note that
+        <strong>in case of Bank Transfer payment option</strong>, the
+        <strong>actual amount to be transferred by your customer</strong> must
+        be equal to the <code>amount</code> + <code>unique_code</code> returned
+        in the response.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>unique_code</b> <em>integer</em></p>
+        Unique code of the transaction
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>status</b> <em>string</em></p>
+        Status of the transaction
+        <table class="desc-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>NOT_CONFIRMED</code></td>
+              <td>If the transaction was just created.</td>
+            </tr>
+            <tr>
+              <td><code>PENDING</code></td>
+              <td>If the transaction has been confirmed by the user.</td>
+            </tr>
+            <tr>
+              <td><code>PROCESSED</code></td>
+              <td>If the transaction is being processed by the system.</td>
+            </tr>
+            <tr>
+              <td><code>CANCELED</code></td>
+              <td>If the transaction is canceled.</td>
+            </tr>
+            <tr>
+              <td><code>FAILED</code></td>
+              <td>If the transaction is failed.</td>
+            </tr>
+            <tr>
+              <td><code>DONE</code></td>
+              <td>If the transaction is successfully done.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>sender_bank</b> <em>string</em></p>
+        Bank that is used for the payment. <br />
+        See <b>Bank Code</b> constants.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>sender_bank_type</b> <em>string</em></p>
+        Type of the sender bank that is used for the payment.
+        <table class="desc-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>bank_account</code></td>
+              <td>If the type of the sender bank uses bank transfer.</td>
+            </tr>
+            <tr>
+              <td><code>virtual_account</code></td>
+              <td>If the type of the sender bank uses a virtual account.</td>
+            </tr>
+            <tr>
+              <td><code>wallet_account</code></td>
+              <td>If the type of the sender bank uses e-wallet.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>receiver_bank_account</b> <em>object</em></p>
+        Account of the receiver of the payment. <br />
+        See <b>Bank Account Object</b> table.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>user_address</b> <em>string</em></p>
+        Address of the User.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>user_phone</b> <em>string</em></p>
+        Phone number of the User.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>created_at</b> <em>integer</em></p>
+        Unix timestamps of the transaction when it is created.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### Bank Account Object
 
-| Attribute      | Description                                                                                                                  |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| account_number | Account number of the receiver bank.                                                                                         |
-| account_type   | Type of the account, the value could be: <ol><li>`virtual_account`</li><li>`bank_account`</li><li>`wallet_account`</li></ol> |
-| bank_code      | Bank code of the account. <br> See [Bank Code Constants](#accept-payment-bank-code).                                         |
-| account_holder | Name of the holder of the account.                                                                                           |
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>account_number</b> <em>string</em></p>
+        Account number of the receiver bank.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>account_type</b> <em>string</em></p>
+        Type of the account, the value could be:
+        <ol>
+          <li>virtual_account</li>
+          <li>bank_account</li>
+          <li>wallet_account</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>bank_code</b> <em>string</em></p>
+        Bank code of the account. See <b>Bank Code Constants</b>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>account_holder</b> <em>string</em></p>
+        Name of the holder of the account.
+      </td>
+    </tr>
+  </tbody>
+</table>

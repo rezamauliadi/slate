@@ -74,6 +74,12 @@ includes:
   - accept-payment/bank-code
   - accept-payment/create-bill
   - accept-payment/edit-bill
+  - accept-payment/get-bill
+  - accept-payment/get-all-bill
+  - accept-payment/get-payment
+  - accept-payment/get-all-payment
+  - accept-payment/confirm-bill-payment
+  - accept-payment/error-list
 
   - international-transfer/title
   - international-transfer/international-transfer-objects

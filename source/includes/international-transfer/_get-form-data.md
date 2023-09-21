@@ -103,7 +103,7 @@ curl https://bigflip.id/api/v2/international-disbursement/form-data?country_iso_
     <tr>
       <td>
         <p><b>transaction_type</b> <em>required</em></p>
-        Transaction type information. Possible values are:
+        Transaction type information.
         <table class="validation-table">
           <thead>
             <tr>

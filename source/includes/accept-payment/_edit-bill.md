@@ -24,7 +24,7 @@ An endpoint to update the attributes of an existing payment link.
 <h3 id="edit-bill-request-headers">Request Headers</h3>
 
 ```http
-POST /pwf/:bill-id/bill HTTP/1.1
+PUT /pwf/:bill-id/bill HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic <secret_key>: (notes with ":" after secret key)
 ```
@@ -98,33 +98,100 @@ curl https://bigflip.id/api/v2/pwf/1/bill \
   <tbody>
     <tr>
       <td>
-        <p><b>title</b> <em>required</em></p>
+        <p><b>title</b> <em>optional</em></p>
         The title of the bill.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Alphanumeric</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>type</b> <em>required</em></p>
-        Bill type:
-        <ul>
-          <li><code>SINGLE</code>: single use</li>
-          <li><code>MULTIPLE</code>: multiple use</li>
-        </ul>
-        For bill created with step 3 only <code>SINGLE</code> is permissible.
+        <p><b>type</b> <em>optional</em></p>
+        Bill type
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="validation-table__helper-text">
+                  Accepted values are as follows:
+                </div>
+                <ul>
+                  <li><code>SINGLE</code>: single use</li>
+                  <li><code>MULTIPLE</code>: multiple use</li>
+                </ul>
+                <div class="validation-table__helper-text" style="padding-top:0">
+                  For bill created with step 3 only <code>SINGLE</code> is permissible.
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>amount</b> <em>optional</em></p>
-        Payment amount, minimum Rp10.000 and maximum Rp10.000.000. Leave blank
-        if want to set a flexible amount.
+        Payment amount
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Minimum Rp10.000</li>
+                  <li>Maximum Rp10.000.000</li>
+                  <li>Leave blank if want to set a flexible amount</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>expired_date</b> <em>optional</em></p>
         Bill expiry date. The bill can't be used any more beyond the expiry
-        date. Format: <code>YYYY-MM-DD HH:mm</code>.
+        date.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Format: <code>YYYY-MM-DD HH:mm</code></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -135,32 +202,71 @@ curl https://bigflip.id/api/v2/pwf/1/bill \
     </tr>
     <tr>
       <td>
-        <p><b>status</b> <em>required</em></p>
-        Bill activation status:
-        <ul>
-          <li><code>ACTIVE</code></li>
-          <li><code>INACTIVE</code></li>
-        </ul>
+        <p><b>status</b> <em>optional</em></p>
+        Bill activation status.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li><code>ACTIVE</code></li>
+                  <li><code>INACTIVE</code></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>is_address_required</b> <em>optional</em></p>
         A flag if user needs to input their address when creating payment.
-        <ul>
-          <li><code>0</code>: false (default)</li>
-          <li><code>1</code>: true</li>
-        </ul>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li><code>0</code>: false (default)</li>
+                  <li><code>1</code>: true</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>is_phone_number_required</b> <em>optional</em></p>
         A flag if user needs to input their phone number when creating payment.
-        <ul>
-          <li><code>0</code>: false (default)</li>
-          <li><code>1</code>: true</li>
-        </ul>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li><code>0</code>: false (default)</li>
+                  <li><code>1</code>: true</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
   </tbody>

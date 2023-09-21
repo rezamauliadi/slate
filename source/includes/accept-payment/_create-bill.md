@@ -98,31 +98,98 @@ curl https://bigflip.id/api/v2/pwf/bill \
       <td>
         <p><b>title</b> <em>required</em></p>
         The title of the bill.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Alphanumeric</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>type</b> <em>required</em></p>
-        Bill type:
-        <ul>
-          <li><code>SINGLE</code>: single use</li>
-          <li><code>MULTIPLE</code>: multiple use</li>
-        </ul>
-        For bill created with step 3 only <code>SINGLE</code> is permissible.
+        Bill type
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="validation-table__helper-text">
+                  Accepted values are as follows:
+                </div>
+                <ul>
+                  <li><code>SINGLE</code>: single use</li>
+                  <li><code>MULTIPLE</code>: multiple use</li>
+                </ul>
+                <div class="validation-table__helper-text" style="padding-top:0">
+                  For bill created with step 3 only <code>SINGLE</code> is permissible.
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>amount</b> <em>optional</em></p>
-        Payment amount, minimum Rp10.000 and maximum Rp10.000.000. Leave blank
-        if want to set a flexible amount.
+        Payment amount
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Minimum Rp10.000</li>
+                  <li>Maximum Rp10.000.000</li>
+                  <li>Leave blank if want to set a flexible amount</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>expired_date</b> <em>optional</em></p>
         Bill expiry date. The bill can't be used any more beyond the expiry
-        date. Format: <code>YYYY-MM-DD HH:mm</code>.
+        date.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Format: <code>YYYY-MM-DD HH:mm</code></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -135,20 +202,46 @@ curl https://bigflip.id/api/v2/pwf/bill \
       <td>
         <p><b>is_address_required</b> <em>optional</em></p>
         A flag if user needs to input their address when creating payment.
-        <ul>
-          <li><code>0</code>: false (default)</li>
-          <li><code>1</code>: true</li>
-        </ul>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li><code>0</code>: false (default)</li>
+                  <li><code>1</code>: true</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
       <td>
         <p><b>is_phone_number_required</b> <em>optional</em></p>
         A flag if user needs to input their phone number when creating payment.
-        <ul>
-          <li><code>0</code>: false (default)</li>
-          <li><code>1</code>: true</li>
-        </ul>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li><code>0</code>: false (default)</li>
+                  <li><code>1</code>: true</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -156,11 +249,24 @@ curl https://bigflip.id/api/v2/pwf/bill \
         <p><b>step</b> <em>required</em></p>
         Which step the customers will be redirected to when opening the payment
         link.
-        <ul>
-          <li><code>1</code>: input-data (default)</li>
-          <li><code>2</code>: payment-method</li>
-          <li><code>3</code>: payment-confirmation</li>
-        </ul>
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li><code>1</code>: input-data (default)</li>
+                  <li><code>2</code>: payment-method</li>
+                  <li><code>3</code>: payment-confirmation</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -173,6 +279,22 @@ curl https://bigflip.id/api/v2/pwf/bill \
           >
         </p>
         Name of the Customer.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Alphanumeric</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -185,6 +307,24 @@ curl https://bigflip.id/api/v2/pwf/bill \
           >
         </p>
         Email of the Customer.
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>
+                    Alphanumeric with email format (<code>xxx@xxx.xxx</code>)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -249,11 +389,12 @@ curl https://bigflip.id/api/v2/pwf/bill \
 
 <h3 id="create-bill-response-body">Response Body</h3>
 
+> **Step 1**
+
 ```json
 Status 200
 Content-Type: application/json
 
-Step 1
 {
   "link_id": 1,
   "link_url": "flip.id/$companyname/#coffeetable",
@@ -268,8 +409,14 @@ Step 1
   "is_address_required": 0,
   "is_phone_number_required": 0
 }
+```
 
-Step 2
+> **Step 2**
+
+```json
+Status 200
+Content-Type: application/json
+
 {
   "link_id": 1,
   "link_url": "flip.id/$companyname/#coffeetable",
@@ -290,8 +437,14 @@ Step 2
     "phone": "+62888888888",
   }
 }
+```
 
-Step 3 (VA and QRIS payment method option using internal `payment_url` for payment confirmation)
+> **Step 3 (VA and QRIS payment method option using internal `payment_url` for payment confirmation)**
+
+```json
+Status 200
+Content-Type: application/json
+
 {
   "link_id": 3276,
   "link_url": "flip.id/$autobisonmaster/#testpgpayment303-5",
@@ -330,8 +483,14 @@ Step 3 (VA and QRIS payment method option using internal `payment_url` for payme
   },
   "payment_url": "https://someurl.com"
 }
+```
 
-Step 3 (for e-wallet payment method using external `payment_url` for payment instruction)
+> **Step 3 (for e-wallet payment method using external `payment_url` for payment instruction)**
+
+```json
+Status 200
+Content-Type: application/json
+
 {
   "link_id": 55228,
   "link_url": "flip.id/$fliptechlenterainspirasipertiwi-1/#sfs3",
@@ -370,7 +529,6 @@ Step 3 (for e-wallet payment method using external `payment_url` for payment ins
   },
   "payment_url": "https://someurl.com"
 }
-
 ```
 
 See [Bill Object](#bill-object) for the details.

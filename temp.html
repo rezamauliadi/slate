@@ -2,72 +2,15 @@
   <tbody>
     <tr>
       <td>
-        <p><b>title</b> <em>required</em></p>
-        The title of the bill.
+        <p><b>confirmed_at</b> <em>string</em></p>
+        Payment's being confirmed timestamp.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>type</b> <em>required</em></p>
-        Bill type:
-        <ul>
-          <li><code>SINGLE</code>: single use</li>
-          <li><code>MULTIPLE</code>: multiple use</li>
-        </ul>
-        For bill created with step 3 only <code>SINGLE</code> is permissible.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>amount</b> <em>optional</em></p>
-        Payment amount, minimum Rp10.000 and maximum Rp10.000.000. Leave blank
-        if want to set a flexible amount.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>expired_date</b> <em>optional</em></p>
-        Bill expiry date. The bill can't be used any more beyond the expiry
-        date. Format: <code>YYYY-MM-DD HH:mm</code>.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>redirect_url</b> <em>optional</em></p>
-        Redirect URL after payment is success.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>status</b> <em>required</em></p>
-        Bill activation status:
-        <ul>
-          <li><code>ACTIVE</code></li>
-          <li><code>INACTIVE</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>is_address_required</b> <em>optional</em></p>
-        A flag if user needs to input their address when creating payment.
-        <ul>
-          <li><code>0</code>: false (default)</li>
-          <li><code>1</code>: true</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>is_phone_number_required</b> <em>optional</em></p>
-        A flag if user needs to input their phone number when creating payment.
-        <ul>
-          <li><code>0</code>: false (default)</li>
-          <li><code>1</code>: true</li>
-        </ul>
+        <p><b>payment_url</b> <em>string</em></p>
+        Payment transaction URL.
       </td>
     </tr>
   </tbody>
 </table>
-
-Change layout Zen mode
