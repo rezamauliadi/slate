@@ -2,276 +2,72 @@
   <tbody>
     <tr>
       <td>
-        <p><b>destination_country</b> <em>required</em></p>
-        Destination country code using ISO 3166 (Alpha-3). See supported
-        <a href="#supported-destination-countries">Destination Countries</a>.
+        <p><b>title</b> <em>required</em></p>
+        The title of the bill.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>source_country</b> <em>required</em></p>
-        Source country code using ISO 3166 (Alpha-3). Currently possible value
-        is IDN.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>transaction_type</b> <em>required</em></p>
-        Transaction type information. Possible values are:
+        <p><b>type</b> <em>required</em></p>
+        Bill type:
         <ul>
-          <li>B2C</li>
-          <li>B2B</li>
+          <li><code>SINGLE</code>: single use</li>
+          <li><code>MULTIPLE</code>: multiple use</li>
+        </ul>
+        For bill created with step 3 only <code>SINGLE</code> is permissible.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>amount</b> <em>optional</em></p>
+        Payment amount, minimum Rp10.000 and maximum Rp10.000.000. Leave blank
+        if want to set a flexible amount.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>expired_date</b> <em>optional</em></p>
+        Bill expiry date. The bill can't be used any more beyond the expiry
+        date. Format: <code>YYYY-MM-DD HH:mm</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>redirect_url</b> <em>optional</em></p>
+        Redirect URL after payment is success.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>status</b> <em>required</em></p>
+        Bill activation status:
+        <ul>
+          <li><code>ACTIVE</code></li>
+          <li><code>INACTIVE</code></li>
         </ul>
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>amount</b> <em>required</em></p>
-        Amount of money that wants to be disbursed to the beneficiary (in
-        beneficiary currency). Maximum 2 decimal places, for Japan there can be
-        no decimal. Must be within the minimum and maximum amount based on
-        transaction currency.
+        <p><b>is_address_required</b> <em>optional</em></p>
+        A flag if user needs to input their address when creating payment.
+        <ul>
+          <li><code>0</code>: false (default)</li>
+          <li><code>1</code>: true</li>
+        </ul>
       </td>
     </tr>
     <tr>
       <td>
-        <p>
-          <b>attachment_data</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        File of invoice for Malaysia B2B
-        <table class="validation-table">
-          <thead>
-            <tr>
-              <th>Validation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <ul>
-                  <li>
-                    Accepted extensions: txt, pdf, doc, docx, jpg, jpeg, png,
-                    bmp, rtf, xls, xlsx
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>attachment_type</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Currently possible value is invoice for MYS
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>beneficiary_account_number</b> <em>required</em></p>
-        Account number of the beneficiary bank
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_ach_code</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Ach code of the beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_address</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Address of the beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_bank_id</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        ID of beneficiary bank
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_bank_name</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Name of beneficiary bank. Can be used for destination countries AUS and
-        GBR
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_branch_number</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Identifier of banks and branches across Japan
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_bsb_number</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Identifier of banks and branches across Australia
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_city</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        City of the beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_document_reference_number</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Reference number of document related to the transaction
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>beneficiary_email</b> <em>optional</em></p>
-        Email of beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_full_name</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Full name of the beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_iban</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Identifier of individual account involved in the international
-        transaction
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_id_expiration_date</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        ID expiration date using YYYY-MM-DD format
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_ifs_code</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Indian financial system code
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_id_number</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        ID Number
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_msisdn</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        A number used to identify a phone number internationally
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_nationality</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Country code using ISO 3166 (Alpha-3) of beneficiary nationality
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_postal_code</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Postal code of the beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_province</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Province or state of the beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_relationship</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Relationship of beneficiary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_remittance_purposes</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Purpose of remittance
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_sort_code</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Digits of code which is used by British and Irish banks
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <b>beneficiary_source_of_funds</b>
-          <em>required, if the destination country need it</em>
-        </p>
-        Source of funds
+        <p><b>is_phone_number_required</b> <em>optional</em></p>
+        A flag if user needs to input their phone number when creating payment.
+        <ul>
+          <li><code>0</code>: false (default)</li>
+          <li><code>1</code>: true</li>
+        </ul>
       </td>
     </tr>
   </tbody>
 </table>
+
+Change layout Zen mode

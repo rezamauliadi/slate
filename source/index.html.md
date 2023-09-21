@@ -69,6 +69,12 @@ includes:
   - agent-verification/enumeration
   - agent-verification/error-list
 
+  - accept-payment/title
+  - accept-payment/accept-payment-objects
+  - accept-payment/bank-code
+  - accept-payment/create-bill
+  - accept-payment/edit-bill
+
   - international-transfer/title
   - international-transfer/international-transfer-objects
   - international-transfer/get-exchange-rates
