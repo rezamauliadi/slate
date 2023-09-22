@@ -139,6 +139,12 @@ This object is the one that will be returned by the Money Transfer API, Special 
                 Account is not verified / Rekening tujuan belum terverifikasi.
               </td>
             </tr>
+            <tr>
+              <td><code>INSUFFICIENT_BALANCE</code></td>
+              <td>
+                Insufficient deposit balance / Deposit tidak cukup.
+              </td>
+            </tr>
           </tbody>
         </table>
       </td>

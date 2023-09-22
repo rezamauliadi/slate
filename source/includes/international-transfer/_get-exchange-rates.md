@@ -152,7 +152,8 @@ Content-Type: application/json
     "notes": null,
     "transaction_type": "C2C",
     "flip_cutoff_time": "2021-12-06 01:00:00+700",
-    "flip_arrival_time": "2021-12-07 12:00:00+700"
+    "flip_arrival_time": "2021-12-07 12:00:00+700",
+    "is_active": true
   },
   {
     "currency_code": "AUD",
@@ -171,7 +172,8 @@ Content-Type: application/json
     "notes": null,
     "transaction_type": "C2C",
     "flip_cutoff_time": "2021-12-06 01:00:00+700",
-    "flip_arrival_time": "2021-12-07 12:00:00+700"
+    "flip_arrival_time": "2021-12-07 12:00:00+700",
+    "is_active": false
   },
   ...
 ]
@@ -273,6 +275,16 @@ This API will return an array of **Exhange Rate** objects.
         <p><b>flip_arrival_time</b> <em>string</em></p>
         Estimation of arrival time. Time will be in GMT+7 with
         <code>yyyy-mm-dd hh:mm:ss</code> format.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>is_active</b> <em>boolean</em></p>
+        Status of the beneficiary country:
+        <ul>
+          <li><code>true</code>: Available for disbursement</li>
+          <li><code>false</code>: Unavailable for disbursement</li>
+        </ul>
       </td>
     </tr>
   </tbody>

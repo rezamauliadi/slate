@@ -11,6 +11,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["anz", "ANZ Indonesia"],
   ["aceh", "Bank Aceh Syariah"],
   ["aladin", "Bank Aladin Syariah"],
+  ["amar", "Bank Amar Indonesia"],
   ["antardaerah", "Bank Antardaerah"],
   ["artha", "Bank Artha Graha Internasional"],
   ["bengkulu", "Bank Bengkulu"],
@@ -56,6 +57,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["mega", "Bank Mega"],
   ["mega_syr", "Bank Mega Syariah"],
   ["mestika_dharma", "Bank Mestika Dharma"],
+  ["mizuho", "Bank Mizuho Indonesia"],
   ["mas", "Bank Multi Arta Sentosa (Bank MAS)"],
   ["mutiara", "Bank Mutiara"],
   ["sumatera_barat", "Bank Nagari"],
@@ -65,6 +67,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["nusantara_parahyangan", "Bank Nusantara Parahyangan"],
   ["ocbc", "Bank OCBC NISP"],
   ["ocbc_syr", "Bank OCBC NISP Syariah"],
+  ["america_na", "Bank of America NA"],
   ["boc", "Bank of China (Hong Kong) Limited"],
   ["india", "Bank of India Indonesia"],
   ["tokyo", "Bank of Tokyo Mitsubishi UFJ"],
@@ -85,6 +88,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["sumsel_dan_babel_syr", "Bank Sumsel Babel Syariah"],
   ["sumut", "Bank Sumut"],
   ["sumut_syr", "Bank Sumut Syariah"],
+  ["resona_perdania", "Bank Resona Perdania"],
   ["victoria_internasional", "Bank Victoria International"],
   ["victoria_syr", "Bank Victoria Syariah"],
   ["woori", "Bank Woori Saudara"],
@@ -93,6 +97,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["bjb_syr", "BJB Syariah"],
   ["royal", "Blu/BCA Digital"],
   ["bni", "BNI (Bank Negara Indonesia)"],
+  ["bnp_paribas", "BNP Paribas Indonesia"],
   ["bali", "BPD Bali"],
   ["banten", "BPD Banten"],
   ["eka", "BPR EKA (Bank Eka)"],
@@ -124,8 +129,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["sbi_indonesia", "SBI Indonesia"],
   ["kesejahteraan_ekonomi", "Seabank/Bank BKE"],
   ["standard_chartered", "Standard Chartered Bank"],
-  ["uob", "TMRW/UOB"],
-  ["bukopin", "Wokee/Bukopin"]
+  ["uob", "TMRW/UOB"]
 ]'></div>
 
 <table class="searchable-table searchable-table__table">

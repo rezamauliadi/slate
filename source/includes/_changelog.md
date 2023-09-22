@@ -17,6 +17,8 @@
   - Add `sender_bank_type`
 - Update Callback section
 
+-->
+
 ### Monday, July 24 2023
 
 - Add new banks code
@@ -41,7 +43,7 @@
 
 ### Tuesday, March 28 2023
 
-- Add new callback: [Bank Status Callback](#bank-status-callback) -->
+- Add new callback: [Bank Status Callback](#bank-status-callback)
 
 ### Friday, March 17 2023
 

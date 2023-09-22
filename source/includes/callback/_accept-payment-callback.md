@@ -2,7 +2,7 @@
 
 ## Accept Payment Callback
 
-Accept payment callback will be sent to you if there is a payment status that changed to `SUCCESSFUL`, `CANCELED`, or `FAILED`. Please make sure that you have set the **Accept Payment** callback URL on the [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
+Accept payment callback will be sent to you if there is a payment status that changed to `SUCCESSFUL`, `CANCELLED`, or `FAILED`. Please make sure that you have set the **Accept Payment** callback URL on the [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
 
 <aside class="warning">
   <p>

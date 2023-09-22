@@ -264,8 +264,8 @@
               <td>If the transaction is being processed by the system.</td>
             </tr>
             <tr>
-              <td><code>CANCELED</code></td>
-              <td>If the transaction is canceled.</td>
+              <td><code>CANCELLED</code></td>
+              <td>If the transaction is cancelled.</td>
             </tr>
             <tr>
               <td><code>FAILED</code></td>

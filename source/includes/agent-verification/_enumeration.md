@@ -44,3 +44,6 @@
 | `28` | User wearing veil                                                                           | Chat with CX team                                                                   |
 | `29` | Indicated in violation of the Terms and Conditions of the application                       | Fraud user - Can't do anything                                                      |
 | `30` | We need confirm your KYC with some data                                                     | Chat with CX team                                                                   |
+| `31` | Identity card of supporting document expired                                                | Upload supporting documents - (Kartu Keluarga, NPWP, BPJS Kesehatan)                |
+| `32` | Photo of supporting document is blurry or can't be read                                     | Upload supporting documents - (Kartu Keluarga, NPWP, BPJS Kesehatan)                |
+| `33` | Photo of supporting document is a random object/image                                       | Upload supporting documents - (Kartu Keluarga, NPWP, BPJS Kesehatan)                |
