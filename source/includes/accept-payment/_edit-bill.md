@@ -162,7 +162,6 @@ curl https://bigflip.id/api/v2/pwf/1/bill \
               <td>
                 <ul>
                   <li>Minimum Rp10.000</li>
-                  <li>Maximum Rp10.000.000</li>
                   <li>Leave blank if want to set a flexible amount</li>
                 </ul>
               </td>

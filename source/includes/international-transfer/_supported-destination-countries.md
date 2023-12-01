@@ -4,54 +4,79 @@
 
 Currently, we support International Transfer to these countries:
 
-| No. | Country ISO Code | Country Name             | Currency ISO Code |
-| --- | ---------------- | ------------------------ | ----------------- |
-| 1   | AND              | Andorra                  | EUR               |
-| 2   | AUS              | Australia                | AUD               |
-| 3   | AUT              | Austria                  | EUR               |
-| 4   | BEL              | Belgium                  | EUR               |
-| 5   | BGR              | Bulgaria                 | EUR               |
-| 6   | CHN              | China (Alipay, C2C Only) | CNY               |
-| 7   | HRV              | Croatia                  | EUR               |
-| 8   | CYP              | Cyprus                   | EUR               |
-| 9   | CZE              | Czech Republic           | EUR               |
-| 10  | DNK              | Denmark                  | EUR               |
-| 11  | EST              | Estonia                  | EUR               |
-| 12  | FIN              | Finland                  | EUR               |
-| 13  | FRA              | France                   | EUR               |
-| 14  | DEU              | Germany                  | EUR               |
-| 15  | GRC              | Greece                   | EUR               |
-| 16  | HKG              | Hongkong                 | HKD / CNY         |
-| 17  | HUN              | Hungary                  | EUR               |
-| 18  | ISL              | Iceland                  | EUR               |
-| 19  | IND              | India                    | INR               |
-| 20  | IRL              | Ireland                  | EUR               |
-| 21  | ITA              | Italy                    | EUR               |
-| 22  | JPN              | Japan                    | JPY               |
-| 23  | LVA              | Latvia                   | EUR               |
-| 24  | LIE              | Liechtenstein            | EUR               |
-| 25  | LTU              | Lithuania                | EUR               |
-| 26  | LUX              | Luxembourg               | EUR               |
-| 27  | MYS              | Malaysia                 | MYR               |
-| 28  | MLT              | Malta                    | EUR               |
-| 29  | MCO              | Monaco                   | EUR               |
-| 30  | NLD              | Netherlands              | EUR               |
-| 31  | NOR              | Norway                   | EUR               |
-| 32  | POL              | Poland                   | EUR               |
-| 33  | PRT              | Portugal                 | EUR               |
-| 34  | ROU              | Romania                  | EUR               |
-| 35  | SMR              | San Marino               | EUR               |
-| 36  | SAU              | Saudi Arabia             | SAR               |
-| 37  | SGP              | Singapore                | SGD               |
-| 38  | SVK              | Slovakia                 | EUR               |
-| 39  | SVN              | Slovenia                 | EUR               |
-| 40  | KOR              | South Korea              | KRW               |
-| 41  | ESP              | Spain                    | EUR               |
-| 42  | SWE              | Sweden                   | EUR               |
-| 43  | CHE              | Switzerland              | EUR               |
-| 44  | THA              | Thailand                 | THB               |
-| 45  | TUR              | Turkey                   | TRY               |
-| 46  | ARE              | United Arab Emirates     | AED               |
-| 47  | GBR              | United Kingdom           | GBP               |
-| 48  | USA              | United States            | USD               |
-| 49  | VAT              | Vatican City State       | EUR               |
+<div id="destination-country-data" style="display: none;" data-destination-country='[
+  ["AND", "Andorra", "EUR"],
+  ["AUS", "Australia", "AUD"],
+  ["AUT", "Austria", "EUR"],
+  ["BEL", "Belgium", "EUR"],
+  ["BGR", "Bulgaria", "EUR"],
+  ["CHN", "China (only C2C and B2B)", "CNY"],
+  ["HRV", "Croatia", "EUR"],
+  ["CYP", "Cyprus", "EUR"],
+  ["CZE", "Czech Republic", "EUR"],
+  ["DNK", "Denmark", "EUR"],
+  ["EST", "Estonia", "EUR"],
+  ["FIN", "Finland", "EUR"],
+  ["FRA", "France", "EUR"],
+  ["DEU", "Germany", "EUR"],
+  ["GRC", "Greece", "EUR"],
+  ["HKG", "Hongkong", "HKD"],
+  ["HUN", "Hungary", "EUR"],
+  ["ISL", "Iceland", "EUR"],
+  ["IND", "India", "INR"],
+  ["IRL", "Ireland", "EUR"],
+  ["ITA", "Italy", "EUR"],
+  ["JPN", "Japan", "JPY"],
+  ["LVA", "Latvia (only C2C/C2B)", "EUR"],
+  ["LIE", "Liechtenstein", "EUR"],
+  ["LTU", "Lithuania", "EUR"],
+  ["LUX", "Luxembourg", "EUR"],
+  ["MYS", "Malaysia", "MYR"],
+  ["MLT", "Malta", "EUR"],
+  ["MCO", "Monaco", "EUR"],
+  ["NLD", "Netherlands", "EUR"],
+  ["NOR", "Norway", "EUR"],
+  ["PHL", "Philippines (only B2C/B2B)", "PHP"],
+  ["POL", "Poland", "EUR"],
+  ["PRT", "Portugal", "EUR"],
+  ["ROU", "Romania", "EUR"],
+  ["SMR", "San Marino", "EUR"],
+  ["SAU", "Saudi Arabia", "SAR"],
+  ["SGP", "Singapore", "SGD"],
+  ["SVK", "Slovakia", "EUR"],
+  ["SVN", "Slovenia", "EUR"],
+  ["KOR", "South Korea", "KRW"],
+  ["ESP", "Spain", "EUR"],
+  ["SWE", "Sweden", "EUR"],
+  ["CHE", "Switzerland", "EUR"],
+  ["THA", "Thailand", "THB"],
+  ["TUR", "Turkey", "TRY"],
+  ["ARE", "United Arab Emirates", "AED"],
+  ["GBR", "United Kingdom", "GBP"],
+  ["USA", "United States", "USD"],
+  ["VAT", "Vatican City State", "EUR"],
+  ["VNM", "Vietnam (only B2C/B2B)", "VND"]
+]'></div>
+
+<table class="searchable-table searchable-table__table">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Country ISO Code</th>
+      <th>Country Name</th>
+      <th>Currency ISO Code</th>
+    </tr>
+    <tr>
+      <th colspan="4">
+        <div class="searchable-table__line-wrapper">
+          <em>Search in table:</em>
+          <div class="searchable-table__search">
+            <input id="destination-country-search-input" type="text" class="searchable-table__input" placeholder="Search country name" value="">
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody id="destination-country-searchable-table__body">
+  </tbody>
+</table>

@@ -10,7 +10,7 @@ Accept payment callback will be sent to you if there is a payment status that ch
     <strong>URL must return a <code>200</code> HTTP Status Code</strong>. If the
     URL returns another HTTP Status Code or if our system doesn't receive any
     response within 30 seconds (timeout), our system will retry the request 5
-    times, with a 2-minute interval for disbursement callback.
+    times, with a 2-minute interval for Accept Payment callback.
   </p>
 </aside>
 
@@ -32,6 +32,7 @@ As described in the [Callback Product Details](#callback-details) section, we wi
   "bill_title": "Cimol Goreng",
   "sender_name": "Jon Doe",
   "sender_bank": "bni",
+  "sender_email": "email@email.com",
   "amount": 10000,
   "status": "SUCCESSFUL",
   "sender_bank_type": "bank_account",

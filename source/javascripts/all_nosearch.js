@@ -1,5 +1,6 @@
 //= require ./lib/_energize
 //= require ./app/_bank-search
+//= require ./app/_country-search
 //= require ./app/_copy
 //= require ./app/_toc
 //= require ./app/_lang
@@ -9,7 +10,7 @@ function adjustLanguageSelectorWidth() {
   elem.width(elem.parent().width());
 }
 
-$(function () {
+$(function() {
   loadToc($("#toc"), ".toc-link", ".toc-list-h2, .toc-list-h3", 10);
 
   prependLangSelector(
@@ -19,19 +20,20 @@ $(function () {
   bindClickLanguageTabs();
   setupLanguages($("body").data("languages"));
 
-  $(".content").imagesLoaded(function () {
+  $(".content").imagesLoaded(function() {
     window.recacheHeights();
     window.refreshToc();
   });
 
-  $(window).resize(function () {
+  $(window).resize(function() {
     adjustLanguageSelectorWidth();
   });
   adjustLanguageSelectorWidth();
 
-  buildDataTable();
+  buildDestinationBankDataTable();
+  buildDestinationCountryDataTable();
 });
 
-window.onpopstate = function () {
+window.onpopstate = function() {
   activateLanguage(getLanguageFromQueryString());
 };

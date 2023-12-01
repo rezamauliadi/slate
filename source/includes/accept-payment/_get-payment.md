@@ -181,98 +181,79 @@ Content-Type: application/json
   "page": 1,
   "data": [
     {
-      "id": "PGPWF3453271107384587",
+      "id": "PGPWF12345",
       "bill_link": "flip.id/$companyname/#coffeetable",
       "bill_title": "Coffee Table",
       "sender_name": "John Smith",
       "sender_bank": "qris",
+      "sender_bank_type": "wallet_account",
+      "virtual_account_number": null,
       "amount": 900000,
       "status": "SUCCESSFUL",
       "settlement_status": "Pending",
-      "created_at": "2022-07-01 14:57:44"
+      "created_at": "2022-07-01 14:57:44",
+      "reference_id": null,
+      "payment_url": "https://flip.id/pwf/transaction/consolidated?redirected_from=internal&id=1235",
+      "created_at": "2021-02-02 14:57:44",
+      "completed_at": "2021-02-02 14:59:30"
     },
     {
-      "id": "PGPWF3453271669674219",
+      "id": "PGPWF12346",
       "bill_link": "flip.id/$companyname/#coffeetable",
       "bill_title": "Coffee Table",
       "sender_name": "Jon Doe",
-      "sender_bank": "ovo",
+      "sender_bank": "mandiri",
+      "sender_bank_type": "virtual_account",
+      "virtual_account_number": "8902290270097932",
       "amount": 900000,
-      "status": "SUCCESSFUL",
+      "status": "PENDING",
       "settlement_status": "Pending",
-      "created_at": "2022-07-02 14:57:44"
+      "created_at": "2022-07-02 14:57:44",
+      "reference_id": null,
+      "payment_url": "https://flip.id/pwf/transaction/consolidated?redirected_from=internal&id=1236",
+      "created_at": "2021-02-03 14:57:44",
+      "completed_at": null
     }
   ]
 }
 ```
 
-<p id="payment-object" style="font-size:13px; font-weight:bold;">Payment Object</p>
-
 <table>
   <tbody>
     <tr>
       <td>
-        <p><b>id</b> <em>string</em></p>
-        Payment ID.
+        <p><b>link_id</b> <em>integer</em></p>
+        Bill Link Id that being searched.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>bill_link</b> <em>string</em></p>
-        Bill link URL of the payment.
+        <p><b>total_data</b> <em>integer</em></p>
+        Total data returned in all pages.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>bill_title</b> <em>string</em></p>
-        Title of the bill.
+        <p><b>data_per_page</b> <em>integer</em></p>
+        Total data returned in current page.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>sender_name</b> <em>string</em></p>
-        Name of the user who did the payment.
+        <p><b>total_page</b> <em>integer</em></p>
+        Total/max pages available.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>sender_bank</b> <em>string</em></p>
-        Bank code of the user's bank.
+        <p><b>page</b> <em>integer</em></p>
+        Current page.
       </td>
     </tr>
     <tr>
       <td>
-        <p><b>amount</b> <em>integer</em></p>
-        Payment amount done by the user.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>status</b> <em>string</em></p>
-        Payment status.
-        <ul class="">
-          <li><code>FAILED</code></li>
-          <li><code>SUCCESSFUL</code></li>
-          <li><code>PENDING</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>settlement_status</b> <em>string</em></p>
-        Merchant settlement status.
-        <ul class="">
-          <li><code>Cancelled</code></li>
-          <li><code>Settled</code></li>
-          <li><code>Pending</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><b>created_at</b> <em>string</em></p>
-        The time when the payment is created. Time will be in GMT+7 with
-        <code>yyyy-mm-dd hh:mm:ss</code> format
+        <p><b>data</b> <em>array</em></p>
+        Array of <b><a href="#payment-object">Payment Object</a></b>.
       </td>
     </tr>
   </tbody>

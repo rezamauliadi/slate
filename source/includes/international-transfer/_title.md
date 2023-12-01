@@ -2,6 +2,8 @@
 
 # International Transfer
 
+> ![International Transfer Flow](product-flows/international-transfer.png)
+
 Hi, welcome to Flip for Business International Transfer API!
 
 This International Transfer API solution is intended for businesses, especially money transfer operators, who want to facilitate international transfer for their users in a cost-efficient, secured, and faster manner.

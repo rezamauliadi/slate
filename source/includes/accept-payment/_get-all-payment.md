@@ -48,7 +48,7 @@ Authorization: Basic <secret_key>: (notes with ":" after secret key)
 $ch = curl_init();
 $secret_key = "yoursecretkeyhere";
 
-curl_setopt($ch, CURLOPT_URL, "https://bigflip.id/api/v2/pwf/payment?start_date=2020-01-01&end_date=2020-12-12&pagination=50&page=1&sort_by=created_at&sort_type=sort_desc");
+curl_setopt($ch, CURLOPT_URL, "https://bigflip.id/api/v2/pwf/payment?start_date=2020-01-01&end_date=2020-12-12&pagination=50&page=1&sort_by=created_at&sort_type=sort_desc&reference_id=REF12345");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
@@ -65,7 +65,7 @@ var_dump($response);
 ```
 
 ```shell
-curl https://bigflip.id/api/v2/pwf/payment?start_date=2020-01-01&end_date=2020-12-12&pagination=50&page=1&sort_by=created_at&sort_type=sort_desc \
+curl https://bigflip.id/api/v2/pwf/payment?start_date=2020-01-01&end_date=2020-12-12&pagination=50&page=1&sort_by=created_at&sort_type=sort_desc&reference_id=REF12345 \
   -u <secret_key>: \
   -H "Content-Type=application/x-www-form-urlencoded"
 ```
@@ -153,6 +153,12 @@ curl https://bigflip.id/api/v2/pwf/payment?start_date=2020-01-01&end_date=2020-1
         </table>
       </td>
     </tr>
+    <tr>
+      <td>
+        <p><b>reference_id</b> <em>optional</em></p>
+        Reference that is provided by merchant (currently only available on static VA payment).
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -163,21 +169,26 @@ Status 200
 Content-Type: application/json
 
 {
-  "total_data": 3,
-  "data_per_page": 3,
+  "total_data": 4,
+  "data_per_page": 4,
   "total_page": 1,
   "page": 1,
   "data": [
     {
-      "id": "FT12345678",
+      "id": "PGPWF12345",
       "bill_link": "flip.id/$companyname/#coffeetable",
       "bill_title": "Coffee Table",
       "sender_name": "John Smith",
       "sender_bank": "mandiri",
+      "sender_bank_type": "virtual_account",
+      "virtual_account_number": "8902290277159017",
       "amount": 900000,
       "status": "SUCCESSFUL",
       "settlement_status": "Pending",
-      "created_at": "2021-02-01 14:57:44"
+      "reference_id": null,
+      "payment_url": "https://flip.id/pwf/transaction/consolidated?redirected_from=internal&id=1234",
+      "created_at": "2021-02-01 14:57:44",
+      "completed_at": "2021-02-02 14:59:30"
     },
     {
       "id": "FT12345679",
@@ -185,25 +196,50 @@ Content-Type: application/json
       "bill_title": "Coffee Table",
       "sender_name": "Jon Doe",
       "sender_bank": "bca",
+      "sender_bank_type": "bank_account",
+      "virtual_account_number": null,
       "amount": 900000,
       "status": "SUCCESSFUL",
       "settlement_status": "Pending",
-      "created_at": "2021-02-02 14:57:44"
+      "reference_id": null,
+      "payment_url": "https://flip.id/pwf/transaction/consolidated?redirected_from=internal&id=1235",
+      "created_at": "2021-02-02 14:57:44",
+      "completed_at": "2021-02-02 14:59:30"
     },
     {
-      "id": "PGPWF3453281233886287",
+      "id": "PGPWF12346",
       "bill_link": "flip.id/$companyname/#coffeechair",
       "bill_title": "Coffee Chair",
       "sender_name": "Jon Doe",
       "sender_bank": "ovo",
+      "sender_bank_type": "wallet_account",
+      "virtual_account_number": null,
       "amount": 100000,
+      "status": "PENDING",
+      "settlement_status": "Pending",
+      "reference_id": null,
+      "payment_url": "https://flip.id/pwf/transaction/consolidated?redirected_from=internal&id=1236",
+      "created_at": "2021-02-03 14:57:44",
+      "completed_at": null
+    },
+    {
+      "id": "PGPWF12347",
+      "bill_link": "flip.id/$companyname/#8902290270097932-1698032345577",
+      "bill_title": "8902290270097932-1698032345577",
+      "sender_name": "June Smith",
+      "sender_bank": "mandiri",
+      "sender_bank_type": "virtual_account",
+      "virtual_account_number": "8902290270097932",
+      "amount": 900000,
       "status": "SUCCESSFUL",
       "settlement_status": "Pending",
-      "created_at": "2021-02-03 14:57:44"
+      "reference_id": "REF1122334455",
+      "payment_url": "https://flip.id/pwf/transaction/consolidated?redirected_from=internal&id=1237",
+      "created_at": "2021-02-04 14:57:44",
+      "completed_at": "2021-02-02 14:59:30"
     }
   ]
 }
-
 ```
 
 <table>

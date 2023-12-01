@@ -1,0 +1,49 @@
+.changelog-table {
+  border: 0;
+  box-shadow: unset;
+  display: table;
+  margin: 0 8px 16px $default-table-margin-right;
+  width: calc(
+    100% - #{$examples-width} + 20% - #{$default-table-right-space} - #{$default-table-margin-right}
+  );
+
+  tbody tr,
+  tbody tr:nth-child(2n) {
+    background-color: $color-white;
+  }
+
+  tbody tr td:first-child {
+    width: 25%;
+  }
+  tbody tr td:nth-child(2) {
+    padding-left: 0;
+  }
+
+  tr,
+  th,
+  td {
+    color: $color-main;
+    font-size: 13px;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  tr td {
+    h3 {
+      color: $color-disabled;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    & > ul {
+      margin-top: -2px;
+      padding-left: 12px;
+    }
+  }
+}

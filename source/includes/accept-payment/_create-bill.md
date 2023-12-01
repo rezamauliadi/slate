@@ -160,8 +160,8 @@ curl https://bigflip.id/api/v2/pwf/bill \
               <td>
                 <ul>
                   <li>Minimum Rp10.000</li>
-                  <li>Maximum Rp10.000.000</li>
                   <li>Leave blank if want to set a flexible amount</li>
+                  <li>Optional for bill created with Step 1 and mandatory for bill created with Step 2/ Step 3</li>
                 </ul>
               </td>
             </tr>
@@ -439,7 +439,7 @@ Content-Type: application/json
 }
 ```
 
-> **Step 3 (VA and QRIS payment method option using internal `payment_url` for payment confirmation)**
+> **Step 3 - VA Payment Method (`payment_url` for displaying payment confirmation is using Flip internal page)**
 
 ```json
 Status 200
@@ -447,8 +447,8 @@ Content-Type: application/json
 
 {
   "link_id": 3276,
-  "link_url": "flip.id/$autobisonmaster/#testpgpayment303-5",
-  "title": "Test PG Payment 303",
+  "link_url": "flip.id/$companyname/#coffeetable",
+  "title": "Coffee Table",
   "type": "SINGLE",
   "amount": 50000,
   "redirect_url": "",
@@ -485,7 +485,7 @@ Content-Type: application/json
 }
 ```
 
-> **Step 3 (for e-wallet payment method using external `payment_url` for payment instruction)**
+> **Step 3 - e-Wallet Payment Method(`payment_url` for displaying payment instruction is using Flip's partner/external's page)**
 
 ```json
 Status 200
@@ -493,8 +493,8 @@ Content-Type: application/json
 
 {
   "link_id": 55228,
-  "link_url": "flip.id/$fliptechlenterainspirasipertiwi-1/#sfs3",
-  "title": "SFS3",
+  "link_url": "flip.id/$companyname/#coffeetable",
+  "title": "Coffee Table",
   "type": "SINGLE",
   "amount": 10100,
   "redirect_url": "https://tokopedia.com",
@@ -531,7 +531,63 @@ Content-Type: application/json
 }
 ```
 
+> **Step 3 - QRIS Payment Method (`payment_url` for displaying payment confirmation is using Flip internal page)**
+
+```json
+Status 200
+Content-Type: application/json
+
+{
+    "link_id": 3745,
+    "link_url": "flip.id/$companyname/#coffeetable",
+    "title": "Coffee Table",
+    "type": "SINGLE",
+    "amount": 50000,
+    "redirect_url": "",
+    "expired_date": null,
+    "created_from": "API",
+    "status": "ACTIVE",
+    "is_address_required": 0,
+    "is_phone_number_required": 0,
+    "step": 3,
+    "customer": {
+        "name": "Customer A",
+        "email": "customer@gmail.com",
+        "address": "Jl. Imam Bonjol No.39, Jakarta.",
+        "phone": "+62888888888",
+    },
+    "bill_payment": {
+        "id": "PGPWF1011688631657552",
+        "amount": 50000,
+        "unique_code": 0,
+        "status": "PENDING",
+        "sender_bank": "qris",
+        "sender_bank_type": "wallet_account",
+        "receiver_bank_account": {
+            "account_number": null,
+            "account_type": "wallet_account",
+            "bank_code": "qris",
+            "account_holder": "Customer A",
+            "qr_code_data": "dummystringforqrcodedata"
+        },
+        "user_address": "Jl. Imam Bonjol No.39, Jakarta.",
+        "user_phone": "+62888888888",
+        "created_at": 1688631657
+    },
+    "payment_url": "https://someurl.com"
+}
+```
+
 See [Bill Object](#bill-object) for the details.
+
+### Creating & Displaying QR Image
+
+Using the Create Bill API with step 3, Merchant is able to generate the QR Image based on the qr_code_data value from the Create Bill API
+response. As reference merchant can check ZXing Library for generating the QR Image, here is the reference link [https://github.com/zxing/zxing](https://github.com/zxing/zxing).
+
+Following the standard from ASPI, Merchant need to display QRIS Logo above the QR and NMID below the QR, like sample below. NMID will be shared by Flip (provided by PTEN) when the Merchant is ready to go to Production.
+
+<img src="../../images/accept-payment/qris-image-example.png" alt="PWF QRIS Example" style="width: 65%;" />
 
 ### BSI VA Payment Steps
 

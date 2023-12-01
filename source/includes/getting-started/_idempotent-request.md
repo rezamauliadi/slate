@@ -53,8 +53,6 @@ To perform an idempotent request, you can just provide an additonal `idempotency
 
 You can provide any unique string to be the idempotency key, such as the transaction id on your side, or another random and unique identifier from your side. The string however, will be limited to 255 char in length.
 
-This idempotency key will be stored forever if the related transacition success. **However, if the transaction is cancelled because of wrong account number or other reasons, the idempotency key will be deleted and you can use the same key to retry the transaction.** We'll always send back the same response for request made with the same key.
-
 If there are two or more requests with the same beneficiary account, bank, and amount within 10 minutes interval **and** the idempotency key is not used in those particular transactions, we will process the first one and hold the latter transaction temporarily to prevent accidental double transfer. Our team will inform you and ask for your confirmation on whether the transaction being held is eligible to be released or not.
 
 Please read the implementation guide [here](https://flipid.zendesk.com/hc/id/articles/900002966266-Can-Flip-s-system-prevent-double-transfer-).

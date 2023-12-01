@@ -103,7 +103,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["eka", "BPR EKA (Bank Eka)"],
   ["agroniaga", "BRI Agroniaga"],
   ["bsm", "BSI (Bank Syariah Indonesia)"],
-  ["btn", "BTN/BTN Syariah"],
+  ["btn", "BTN"],
   ["tabungan_pensiunan_nasional", "BTPN"],
   ["cimb", "CIMB Niaga & CIMB Niaga Syariah"],
   ["citibank", "Citibank"],
@@ -129,7 +129,9 @@ Find the list of bank codes below for the supported destination banks and e-Wall
   ["sbi_indonesia", "SBI Indonesia"],
   ["kesejahteraan_ekonomi", "Seabank/Bank BKE"],
   ["standard_chartered", "Standard Chartered Bank"],
-  ["uob", "TMRW/UOB"]
+  ["uob", "TMRW/UOB"],
+  ["bukopin", "Wokee/Bukopin"],
+  ["btn_syr", "BTN Syariah"]
 ]'></div>
 
 <table class="searchable-table searchable-table__table">
@@ -149,7 +151,7 @@ Find the list of bank codes below for the supported destination banks and e-Wall
       </th>
     </tr>
   </thead>
-  <tbody id="searchable-table__body">
+  <tbody id="destination-bank-searchable-table__body">
   </tbody>
 </table>
 

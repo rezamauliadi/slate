@@ -45,6 +45,8 @@
 }
 ```
 
+Bill detail data
+
 <table>
   <tbody>
     <tr>
@@ -149,7 +151,7 @@
           >(Returned only if customer's merchant chooses step 2 or 3)</strong
         >
         <br />
-        Customer Data that is being saved. See <b>Customer Object</b> table.
+        Customer Data that is being saved. See <b><a href="#bill-customer-object">Bill Customer Object</a></b> table.
       </td>
     </tr>
     <tr>
@@ -158,7 +160,7 @@
         <strong>(Returned only if customer's merchant chooses step 3)</strong>
         <br />
         Bill Payment data that has been created. See
-        <b>Bill Payment Object</b> table.
+        <b><a href="#bill-payment-object">Bill Payment Object</a></b> table.
       </td>
     </tr>
     <tr>
@@ -182,7 +184,9 @@
   </tbody>
 </table>
 
-### Customer Object
+### Bill Customer Object
+
+Customer detail data
 
 <table>
   <tbody>
@@ -214,6 +218,8 @@
 </table>
 
 ### Bill Payment Object
+
+Bill Payment detail data
 
 <table>
   <tbody>
@@ -342,7 +348,146 @@
   </tbody>
 </table>
 
+### Payment Object
+
+Payment detail data
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p><b>id</b> <em>string</em></p>
+        Payment ID.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>bill_link</b> <em>string</em></p>
+        Bill link URL of the payment.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>bill_title</b> <em>string</em></p>
+        Title of the bill.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>sender_name</b> <em>string</em></p>
+        Name of the user who did the payment.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>sender_bank</b> <em>string</em></p>
+        Bank code of the user's bank.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>sender_bank_type</b> <em>string</em></p>
+        Type of the sender bank that is used for the payment.
+        <table class="desc-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>bank_account</code></td>
+              <td>If the type of the sender bank uses bank transfer.</td>
+            </tr>
+            <tr>
+              <td><code>virtual_account</code></td>
+              <td>If the type of the sender bank uses a virtual account.</td>
+            </tr>
+            <tr>
+              <td><code>wallet_account</code></td>
+              <td>If the type of the sender bank uses e-wallet.</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>virtual_account_number</b> <em>string</em></p>
+        Number that is generated for the <code>virtual_account</code> payment.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>amount</b> <em>integer</em></p>
+        Payment amount done by the user.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>status</b> <em>string</em></p>
+        Payment status.
+        <ul>
+          <li><code>FAILED</code></li>
+          <li><code>SUCCESSFUL</code></li>
+          <li><code>PENDING</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>settlement_status</b> <em>string</em></p>
+        Merchant settlement status.
+        <ul>
+          <li><code>Cancelled</code></li>
+          <li><code>Settled</code></li>
+          <li><code>Pending</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>reference_id</b> <em>string</em></p>
+        Reference that is provided by merchant (currently only available on static VA payment).
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>payment_url</b> <em>string</em></p>
+        URL of the confirmation link or instruction to do the payment action.<br />
+        <ul>
+          <li>
+            URL confirmation link is for payment using bank transfer, VA payment
+            method, and QRIS with internal URL.
+          </li>
+          <li>
+            URL instruction link is for payment using e-wallet payment method
+            with external URL.
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>created_at</b> <em>string</em></p>
+        The time when the payment is created. Time will be in GMT+7 with
+        <code>yyyy-mm-dd hh:mm:ss</code> format.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>completed_at</b> <em>string</em></p>
+        The time when the payment is completed. Time will be in GMT+7 with
+        <code>yyyy-mm-dd hh:mm:ss</code> format.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ### Bank Account Object
+
+Bank account detail data
 
 <table>
   <tbody>

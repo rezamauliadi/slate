@@ -28,7 +28,8 @@ We will hit your URL using **POST** request with content type `application/x-www
     <strong>URL must return a <code>200</code> HTTP Status Code</strong>. If the
     URL returns another HTTP Status Code or if our system doesn't receive any
     response within 30 seconds (timeout), our system will retry the request 5
-    times, with a 2-minute interval for disbursement callback.
+    times, with a 2-minute interval for the transaction callback (Money
+    Transfer, Accept Payment, International Transfer).
   </p>
 </aside>
 

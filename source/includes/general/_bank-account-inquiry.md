@@ -232,16 +232,69 @@ Content-Type: application/json
     <tr>
       <td>
         <p><b>status</b> <em>string</em></p>
-        The returned status of the inquired account. Possible values are listed below.<br>
-        <ul>
-          <li><code>PENDING</code><br>Inquiry still in process. The result will be returned via callback.</li>
-          <li><code>SUCCESS</code><br>Inquiry process is complete and bank account number is valid.</li>
-          <li><code>INVALID_ACCOUNT_NUMBER</code><br>Inquiry process is complete but the account number is invalid or maybe a virtual account number.</li>
-          <li><code>SUSPECTED_ACCOUNT</code><br>Bank account have been suspected on doing fraud. You still can do a disbursement to this account.</li>
-          <li><code>BLACK_LISTED</code><br>Bank account have been confirmed on doing a fraud and therefore is blacklisted. You can't do a disbursment to this account.</li>
-          <li><code>FAILED</code><br>The inquiry process is failed before we get the final status of the inquiry, e.g due to timeout or any other errors from the bank. If you get this response, please retry the inquiry to trigger reverification of the account.</li>
-          <li><code>CLOSED</code><br>The inquiry process is complete and the account is valid, but it is closed/inactive so that it cannot receive money. You cannot do a disbursement to this account.</li>
-        </ul>
+        The returned status of the inquired account. Possible values are listed
+        below.<br />
+        <table class="desc-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>PENDING</code></td>
+              <td>
+                Inquiry still in process. The result will be returned via
+                callback.
+              </td>
+            </tr>
+            <tr>
+              <td><code>SUCCESS</code></td>
+              <td>
+                Inquiry process is complete and bank account number is valid.
+              </td>
+            </tr>
+            <tr>
+              <td><code>INVALID_ACCOUNT_NUMBER</code></td>
+              <td>
+                Inquiry process is complete but the account number is invalid or
+                maybe a virtual account number.
+              </td>
+            </tr>
+            <tr>
+              <td><code>SUSPECTED_ACCOUNT</code></td>
+              <td>
+                Bank account have been suspected on doing fraud. You still can
+                do a disbursement to this account.
+              </td>
+            </tr>
+            <tr>
+              <td><code>BLACK_LISTED</code></td>
+              <td>
+                Bank account have been confirmed on doing a fraud and therefore
+                is blacklisted. You can't do a disbursment to this account.
+              </td>
+            </tr>
+            <tr>
+              <td><code>FAILED</code></td>
+              <td>
+                The inquiry process is failed before we get the final status of
+                the inquiry, e.g due to timeout or any other errors from the
+                bank. If you get this response, please retry the inquiry to
+                trigger reverification of the account.
+              </td>
+            </tr>
+            <tr>
+              <td><code>CLOSED</code></td>
+              <td>
+                The inquiry process is complete and the account is valid, but it
+                is closed/inactive so that it cannot receive money. You cannot
+                do a disbursement to this account.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
     <tr>
@@ -255,6 +308,13 @@ Content-Type: application/json
 
 <aside class="danger">
   <p>
-    <code class="prettyprint">SUSPECTED_ACCOUNT</code> and <code class="prettyprint">BLACK_LISTED</code> are based on Flip's user report.  This might be inacurrate, and we flag an exact string of the account number reported by our users. For example, <code class="prettyprint">350000069</code> will be different with <code class="prettyprint">00350000069</code> although it may be the same account. We are still working on a better way to handle this leading zeroes issue.
+    <code class="prettyprint">SUSPECTED_ACCOUNT</code> and
+    <code class="prettyprint">BLACK_LISTED</code> are based on Flip's user
+    report. This might be inacurrate, and we flag an exact string of the account
+    number reported by our users. For example,
+    <code class="prettyprint">350000069</code> will be different with
+    <code class="prettyprint">00350000069</code> although it may be the same
+    account. We are still working on a better way to handle this leading zeroes
+    issue.
   </p>
 </aside>

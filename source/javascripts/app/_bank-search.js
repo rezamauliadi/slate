@@ -1,25 +1,25 @@
 //= require ../lib/_jquery
 
-(function () {
+(function() {
   "use strict";
 
-  window.buildDataTable = buildDataTable;
+  window.buildDestinationBankDataTable = buildDestinationBankDataTable;
 
   let dataItems = [];
 
-  function buildDataTable() {
+  function buildDestinationBankDataTable() {
     const dataDiv = $("#destination-bank-data");
     dataItems = $(dataDiv)
       .data("destination-bank")
-      .map((item) => [...item, item[0] + " " + item[1]]);
+      .map(item => [...item, item[0] + " " + item[1]]);
 
-    bindSearch();
-    buildContent(dataItems);
+    bindBankSearch();
+    buildBankContent(dataItems);
   }
 
-  function buildContent(data) {
+  function buildBankContent(data) {
     const list = [];
-    data.forEach((item) => {
+    data.forEach(item => {
       list.push(`
         <tr>
           <td>${item[0]}</td>
@@ -28,27 +28,27 @@
       `);
     });
     const tableContent = list.join("");
-    $("#searchable-table__body").empty();
-    $("#searchable-table__body").append(tableContent);
+    $("#destination-bank-searchable-table__body").empty();
+    $("#destination-bank-searchable-table__body").append(tableContent);
   }
 
-  function bindSearch() {
-    $("#destination-bank-search-input").on("keyup", function (e) {
-      search(e);
+  function bindBankSearch() {
+    $("#destination-bank-search-input").on("keyup", function(e) {
+      searchBank(e);
     });
   }
 
-  function search(event) {
+  function searchBank(event) {
     const searchInput = event.target.value.trim();
     if (searchInput !== "") {
       const searchQuery = searchInput.toLowerCase();
-      const filteredData = dataItems.filter((item) => {
-        const itemContent = item[2];
+      const filteredData = dataItems.filter(item => {
+        const itemContent = item[2].toLowerCase();
         return itemContent.includes(searchQuery);
       });
-      buildContent(filteredData);
+      buildBankContent(filteredData);
     } else {
-      buildContent(dataItems);
+      buildBankContent(dataItems);
     }
   }
 })();

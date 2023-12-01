@@ -1,3 +1,5 @@
 - link link di table belum pada ngelink ke tempat yang benar
 - tabel response get all
 - url ID http section di verif agen
+
+- contoh AP semua pake response asli --> ini diganti

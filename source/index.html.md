@@ -102,6 +102,8 @@ includes:
   - callback/agent-kyc-status-callback
   - callback/bank-status-callback
 
+  - changelog
+
 search: true
 
 code_clipboard: false
