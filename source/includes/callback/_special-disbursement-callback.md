@@ -2,7 +2,7 @@
 
 ## Special Disbursement Callback
 
-Special Disbursement callback will be sent to you if you transaction status is changed to `DONE` or `CANCELLED`. This callback is used for the V2 and V3 Special Disbursement. Please make sure that you have set the **Transaction** callback URL on the [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
+Special Disbursement callback will be sent to you if you transaction status is changed to `DONE` or `CANCELLED`. This callback is used for the V2 and V3 Special Disbursement. Please make sure that you have set the **Transaction** callback URL on the <a href="https://business.flip.id/developer/api-setting" target="_blank">Flip for Business dashboard</a>.
 
 <aside class="warning">
   <p>

@@ -2,7 +2,7 @@
 
 ## Signature
 
-Signature is used to secure your request API, to avoid attackers change your payload. Signature is optional, by default it is disabled. Signature only for API that related to [Disbursement](#disbursement).
+Signature is used to secure your request API, to avoid attackers change your payload. Signature is optional, by default it is disabled. Signature only for API that related to **Disbursement**.
 
 ```php
 <?php
@@ -34,7 +34,7 @@ If you want to enable a signature, please do the following steps:
 
 1. Generate public key and private key pair. Use algorithm OPENSSL_KEYTYPE_RSA 2048 bits.
 2. Send the public key to flip.id and inform when you ready to request with signature.
-3. Every request for API [Disbursement](#disbursement), add header X-Signature. Generate signature with your private key, the input data is your parameter POST & GET request encoded in string, all data type should be a string. Signature use algorithm sha256WithRSAEncryption and encode with base64.
+3. Every request for API **Disbursement**, add header X-Signature. Generate signature with your private key, the input data is your parameter POST & GET request encoded in string, all data type should be a string. Signature use algorithm `sha256WithRSAEncryption` and encode with base64.
 
 ![Big Flip Signature](bigflip_signature.jpg)
 

@@ -23,7 +23,7 @@ curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Basic ".$encoded_auth]);
 curl --user <wwwwwwwxxxxxxxaaaaaaabbbbbbbbbcccccdddd>: https://bigflip.id/api/v2/disbursement
 ```
 
-We are using **Basic Authentication** by including `Authorization` header in each of your request. Value of the header is the provided Secret Key from your <a href="https://business.flip.id/settings/api-setting" target="_blank">Flip for Business dashboard</a>. You should include your secret key like a usual basic auth request, and use the secret key as the username:
+We are using **Basic Authentication** by including `Authorization` header in each of your request. Value of the header is the provided Secret Key from your <a href="https://business.flip.id/developer/api-setting" target="_blank">Flip for Business dashboard</a>. You should include your secret key like a usual basic auth request, and use the secret key as the username:
 
 `Authorization: Basic [base64encode(<secret_key>+":")]`
 

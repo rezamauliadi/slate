@@ -6,18 +6,18 @@
   <br/>
   <p>
     <b>Need assistance?</b><br/>
-    Don't hesitate to ask for any assistance by contacting our <a href="#">support team</a>.
+    Don't hesitate to ask for any assistance by contacting our <a href="mailto:business@flip.id">support team</a>.
   </p>
   <p>
     <b>Not a developer?</b><br/>
     Visit our Flip for Business Docs instead to see how-to-operate out products via dashboard with no integration.<br/>
-    <a href="#">Go to Flip for Business Docs</a>
+    <a href="https://help.flip.id/category/11">Go to Flip for Business Docs</a>
   </p>
 </blockquote>
 
 Flip will help you in doing and managing your business transaction, so you can focus on creating a better product.
 
-Currently, we have API endpoints from two different versions (V2 and V3). There are endpoints that exclusively exist in V2 or V3. On the body of the endpoints we have incorporated information about which version does the API endpoint belong to. This is done to help you avoid using incompatible URL base, because each version has their own [product environment](#product-environment).
+Currently, we have API endpoints from two different versions (V2 and V3). There are endpoints that exclusively exist in V2 or V3. On the body of the endpoints we have incorporated information about which version does the API endpoint belong to. This is done to help you avoid using incompatible URL base, because each version has their own [product environment](#environment).
 
 | Version | URL Example                                                   |
 | :------ | :------------------------------------------------------------ |

@@ -2,7 +2,7 @@
 
 ## Bank Status Callback
 
-A bank status info will be sent to you via the provided URL for Bank Disturbance callback. Please make sure that you have set the **Bank Status** callback URL on the [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
+A bank status info will be sent to you via the provided URL for Bank Disturbance callback. Please make sure that you have set the **Bank Status** callback URL on the <a href="https://business.flip.id/developer/api-setting" target="_blank">Flip for Business dashboard</a>.
 
 <aside class="danger">
   <p>

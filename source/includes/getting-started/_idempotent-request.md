@@ -47,7 +47,7 @@ curl https://bigflip.id/api/v2/disbursement \
     -d recipient_city="391"
 ```
 
-This version of API supports [idempotency](http://restcookbook.com/HTTP%20Methods/idempotency/), so you can safely retrying request without accidentally performing the same operation twice. If you send a [create a disbursement](#create-disbursement) and the request fails due to network error or other factor, you can safely retry the request with the same idempotency key and be sure that only a single disbursement is created.
+This version of API supports [idempotency](http://restcookbook.com/HTTP%20Methods/idempotency/), so you can safely retrying request without accidentally performing the same operation twice. If you send a [create a disbursement](#create-disbursement-v3) and the request fails due to network error or other factor, you can safely retry the request with the same idempotency key and be sure that only a single disbursement is created.
 
 To perform an idempotent request, you can just provide an additonal `idempotency-key` header to your request.
 
@@ -55,4 +55,4 @@ You can provide any unique string to be the idempotency key, such as the transac
 
 If there are two or more requests with the same beneficiary account, bank, and amount within 10 minutes interval **and** the idempotency key is not used in those particular transactions, we will process the first one and hold the latter transaction temporarily to prevent accidental double transfer. Our team will inform you and ask for your confirmation on whether the transaction being held is eligible to be released or not.
 
-Please read the implementation guide [here](https://flipid.zendesk.com/hc/id/articles/900002966266-Can-Flip-s-system-prevent-double-transfer-).
+Please read the implementation guide <a href="https://help.flip.id/article/7998-sistemnya-flip-dapat-mencegah-transaksi-terproses-dua-kali-kah?entry_point=1" target="_blank" rel="noopener noreferrer">here</a>.

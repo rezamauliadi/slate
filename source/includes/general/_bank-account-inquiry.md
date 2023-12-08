@@ -2,7 +2,7 @@
 
 ## Bank Account Inquiry
 
-You can use this endpoint to get the bank account holder name. For now, it still take us a few seconds to do the inquiry. The result will be returned as a callback if we haven't cached it yet. If it have been cached, you will get the result instantly. Be sure to set up your callback inquiry entry in your <a href="https://business.flip.id/settings/api-setting" target="_blank" rel="noopener noreferrer">Flip for Business Dashboard</a>.
+You can use this endpoint to get the bank account holder name. For now, it still take us a few seconds to do the inquiry. The result will be returned as a callback if we haven't cached it yet. If it have been cached, you will get the result instantly. Be sure to set up your callback inquiry entry in your <a href="https://business.flip.id/developer/api-setting" target="_blank" rel="noopener noreferrer">Flip for Business Dashboard</a>.
 
 <aside class="notice">
   <p>

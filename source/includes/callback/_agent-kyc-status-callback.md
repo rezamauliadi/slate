@@ -11,7 +11,7 @@ A callback notification will be sent to your Agent KYC callback URL if there is 
 | `APPROVED`                       | `40` | KYC Approved                                    |
 | `REJECTED`                       | `50` | KYC Rejected                                    |
 
-Please make sure that you have set the **Agent KYC Verification** callback URL on the [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
+Please make sure that you have set the **Agent KYC Verification** callback URL on the <a href="https://business.flip.id/developer/api-setting" target="_blank">Flip for Business dashboard</a>.
 
 <aside class="danger">
   <p>

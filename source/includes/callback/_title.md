@@ -4,13 +4,13 @@
 
 ## Callback Details
 
-When your transaction status changed or when our system has completed the bank account inquiry process, we will hit the URL you've provided in your [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
+When your transaction status changed or when our system has completed the bank account inquiry process, we will hit the URL you've provided in your [Flip for Business dashboard](https://business.flip.id/developer/api-setting).
 
 <aside class="notice">
   <p>
     Make sure you have set the required callback URLs in your
     <a
-      href="https://business.flip.id/settings/api-setting"
+      href="https://business.flip.id/developer/api-setting"
       target="_blank"
       rel="noopener noreferrer"
       >Flip for Business dashboard</a
@@ -56,7 +56,7 @@ data={"bank_code":"bca","account_number":1234567890,"account_holder":"John Doe",
         Validation token to ensure that the callback is coming from our server.
         You can get your token in your
         <a
-          href="https://business.flip.id/settings/api-setting"
+          href="https://business.flip.id/developer/api-setting"
           target="_blank"
           rel="noopener noreferrer"
           >Flip for Business dashboard</a

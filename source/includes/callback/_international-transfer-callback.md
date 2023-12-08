@@ -2,7 +2,7 @@
 
 ## International Transfer Callback
 
-International transfer callback will be sent to you if you transaction status is changed. Please make sure that you have set the **International Transfer** callback URL on the [Flip for Business dashboard](https://business.flip.id/settings/api-setting).
+International transfer callback will be sent to you if you transaction status is changed. Please make sure that you have set the **International Transfer** callback URL on the <a href="https://business.flip.id/developer/api-setting" target="_blank">Flip for Business dashboard</a>.
 
 <aside class="warning">
   <p>
