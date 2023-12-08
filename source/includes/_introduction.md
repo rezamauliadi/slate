@@ -1,4 +1,4 @@
-<h1 id="introduction" style="margin-bottom: 0;">Introduction</h1>
+<h1 id="introduction" style="margin-bottom: 0; margin-top: 0; border-top: none;">Introduction</h1>
 
 <div class="secondary-heading">Welcome to Flip for Business API Docs</div>
 
