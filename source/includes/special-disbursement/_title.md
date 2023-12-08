@@ -2,7 +2,11 @@
 
 # Special Money Transfer
 
-> ![Special Money Transfer Flow](product-flows/special-money-transfer.png)
+<blockquote>
+  <a class="spotlight" href="../../images/product-flows/special-money-transfer.png" data-autofit="false">
+    <img src="../../images/product-flows/special-money-transfer.png" alt="Special Money Transfer Flowchart">
+  </a>
+</blockquote>
 
 Special Money Transfer is a type of disbursement for a company with PJP (Penyedia Jasa Pembayaran) license, operating as a Money Transfer Company (Perusahaan Transfer Dana). While in [Money Transfer](#money-transfer) disbursement the original sender is the company, in Special Money Transfer the original sender is the company’s user.
 

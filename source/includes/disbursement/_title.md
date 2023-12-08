@@ -2,7 +2,11 @@
 
 # Money Transfer
 
-> ![Money Transfer Flow](product-flows/money-transfer.png)
+<blockquote>
+  <a class="spotlight" href="../../images/product-flows/money-transfer.png" data-autofit="false">
+    <img src="../../images/product-flows/money-transfer.png" alt="Money Transfer Flowchart">
+  </a>
+</blockquote>
 
 Money Transfer is one of the products within Flip for Business which was created with the aim to facilitate users complete high volume transactions in an easier, faster, and more cost-efficient manner. With Money Transfer, users can transfer money up to 20,000 accounts in one go across different beneficiaries.
 

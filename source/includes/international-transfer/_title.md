@@ -2,7 +2,11 @@
 
 # International Transfer
 
-> ![International Transfer Flow](product-flows/international-transfer.png)
+<blockquote>
+  <a class="spotlight" href="../../images/product-flows/international-transfer.png" data-autofit="false">
+    <img src="../../images/product-flows/international-transfer.png" alt="International Transfer Flowchart">
+  </a>
+</blockquote>
 
 Hi, welcome to Flip for Business International Transfer API!
 

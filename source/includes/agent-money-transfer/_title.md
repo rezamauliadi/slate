@@ -2,7 +2,11 @@
 
 # Agent Money Transfer
 
-> ![Agent Money Transfer Flow](product-flows/agent-money-transfer.png)
+<blockquote>
+  <a class="spotlight" href="../../images/product-flows/agent-money-transfer.png" data-autofit="false">
+    <img src="../../images/product-flows/agent-money-transfer.png" alt="Agent Money Transfer Flowchart">
+  </a>
+</blockquote>
 
 <blockquote>
   <p style="font-size: 12px; font-weight: 700;">

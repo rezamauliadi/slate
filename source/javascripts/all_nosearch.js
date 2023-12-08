@@ -4,6 +4,7 @@
 //= require ./app/_copy
 //= require ./app/_toc
 //= require ./app/_lang
+//= require ./app/_spotlight
 
 function adjustLanguageSelectorWidth() {
   const elem = $(".dark-box > .lang-selector");
